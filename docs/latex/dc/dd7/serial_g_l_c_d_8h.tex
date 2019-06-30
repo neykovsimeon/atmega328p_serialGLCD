@@ -1,0 +1,133 @@
+\hypertarget{serial_g_l_c_d_8h}{}\section{D\+:/\+Projects/serial\+G\+L\+C\+D128x64\+\_\+avr/serial\+G\+L\+C\+D/serial\+G\+L\+C\+D/serial\+G\+L\+CD.h File Reference}
+\label{serial_g_l_c_d_8h}\index{D:/Projects/serialGLCD128x64\_avr/serialGLCD/serialGLCD/serialGLCD.h@{D:/Projects/serialGLCD128x64\_avr/serialGLCD/serialGLCD/serialGLCD.h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{serial_g_l_c_d_8h_a9e19d3e9d60891fa4e86aa6f63dc1a2b}{serial\+G\+L\+CD}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{serial_g_l_c_d_8h_a9a3a97eb67649a289a9224902b3e80ee}{serial\+G\+L\+C\+D\+\_\+backlight}} (unsigned char backlight)
+\begin{DoxyCompactList}\small\item\em Serial A\+S\+C\+II commands -\/ backlight duty cycle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{serial_g_l_c_d_8h_a5666f2c788e6fac294ddf8304e898fce}{serial\+G\+L\+C\+D\+\_\+goto\+Pixel\+\_\+\+XY}} (unsigned char PixelX, unsigned char PixelY)
+\begin{DoxyCompactList}\small\item\em Serial A\+S\+C\+II commands -\/ Set X and Y Coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{serial_g_l_c_d_8h_ae8753c791c68ffcca564587e23e70bdd}{serial\+G\+L\+C\+D\+\_\+reverse}} ()
+\begin{DoxyCompactList}\small\item\em Serial A\+S\+C\+II commands -\/ toggle reverse display mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{serial_g_l_c_d_8h_af81a102f93ad0e110e6692a7fbbe3603}{serial\+G\+L\+C\+D\+\_\+clear}} ()
+\begin{DoxyCompactList}\small\item\em Serial A\+S\+C\+II commands -\/ Clear Screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{serial_g_l_c_d_8h_afcb2488092e0deff3358181b2c56c1e0}{serial\+G\+L\+C\+D\+\_\+send\+Char}} (unsigned char my\+Char)
+\begin{DoxyCompactList}\small\item\em Serial G\+L\+CD -\/ Send A Character. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{serial_g_l_c_d_8h_af9a185387ed5b23392393cdcbc030e6a}{serial\+G\+L\+C\+D\+\_\+send\+String}} (char $\ast$my\+String)
+\begin{DoxyCompactList}\small\item\em Serial G\+L\+CD -\/ Send A String of Characters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{serial_g_l_c_d_8h_a9e19d3e9d60891fa4e86aa6f63dc1a2b}\label{serial_g_l_c_d_8h_a9e19d3e9d60891fa4e86aa6f63dc1a2b}} 
+\index{serialGLCD.h@{serialGLCD.h}!serialGLCD@{serialGLCD}}
+\index{serialGLCD@{serialGLCD}!serialGLCD.h@{serialGLCD.h}}
+\subsubsection{\texorpdfstring{serialGLCD}{serialGLCD}}
+{\footnotesize\ttfamily \#define serial\+G\+L\+CD}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{serial_g_l_c_d_8h_a9a3a97eb67649a289a9224902b3e80ee}\label{serial_g_l_c_d_8h_a9a3a97eb67649a289a9224902b3e80ee}} 
+\index{serialGLCD.h@{serialGLCD.h}!serialGLCD\_backlight@{serialGLCD\_backlight}}
+\index{serialGLCD\_backlight@{serialGLCD\_backlight}!serialGLCD.h@{serialGLCD.h}}
+\subsubsection{\texorpdfstring{serialGLCD\_backlight()}{serialGLCD\_backlight()}}
+{\footnotesize\ttfamily void serial\+G\+L\+C\+D\+\_\+backlight (\begin{DoxyParamCaption}\item[{unsigned char}]{backlight }\end{DoxyParamCaption})}
+
+
+
+Serial A\+S\+C\+II commands -\/ backlight duty cycle. 
+
+Set back light Duty Cycle.
+
+\href{https://learn.sparkfun.com/tutorials/serial-graphic-lcd-hookup/?_ga=1.12355956.1126191215.1366741676}{\texttt{ Spark\+Fun items}}
+
+Consider U\+A\+RT was initialized and enabled. Setting the value to zero turns the back light off, setting it at 100 or above turns it full on. Intermediate values set it somewhere in-\/ between. \mbox{\Hypertarget{serial_g_l_c_d_8h_af81a102f93ad0e110e6692a7fbbe3603}\label{serial_g_l_c_d_8h_af81a102f93ad0e110e6692a7fbbe3603}} 
+\index{serialGLCD.h@{serialGLCD.h}!serialGLCD\_clear@{serialGLCD\_clear}}
+\index{serialGLCD\_clear@{serialGLCD\_clear}!serialGLCD.h@{serialGLCD.h}}
+\subsubsection{\texorpdfstring{serialGLCD\_clear()}{serialGLCD\_clear()}}
+{\footnotesize\ttfamily void serial\+G\+L\+C\+D\+\_\+clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Serial A\+S\+C\+II commands -\/ Clear Screen. 
+
+This command clears the screen of all written pixels.
+
+\href{https://learn.sparkfun.com/tutorials/serial-graphic-lcd-hookup/?_ga=1.12355956.1126191215.1366741676}{\texttt{ Spark\+Fun items}}
+
+Consider U\+A\+RT was initialized and enabled. If you\textquotesingle{}re operating in normal mode, all pixels are reset. If you\textquotesingle{}re operating in reverse mode, all pixels are set. \mbox{\Hypertarget{serial_g_l_c_d_8h_a5666f2c788e6fac294ddf8304e898fce}\label{serial_g_l_c_d_8h_a5666f2c788e6fac294ddf8304e898fce}} 
+\index{serialGLCD.h@{serialGLCD.h}!serialGLCD\_gotoPixel\_XY@{serialGLCD\_gotoPixel\_XY}}
+\index{serialGLCD\_gotoPixel\_XY@{serialGLCD\_gotoPixel\_XY}!serialGLCD.h@{serialGLCD.h}}
+\subsubsection{\texorpdfstring{serialGLCD\_gotoPixel\_XY()}{serialGLCD\_gotoPixel\_XY()}}
+{\footnotesize\ttfamily void serial\+G\+L\+C\+D\+\_\+goto\+Pixel\+\_\+\+XY (\begin{DoxyParamCaption}\item[{unsigned char}]{PixelX,  }\item[{unsigned char}]{PixelY }\end{DoxyParamCaption})}
+
+
+
+Serial A\+S\+C\+II commands -\/ Set X and Y Coordinates. 
+
+Set X and Y referred to the Pixel level coordinates
+
+\href{https://learn.sparkfun.com/tutorials/serial-graphic-lcd-hookup/?_ga=1.12355956.1126191215.1366741676}{\texttt{ Spark\+Fun items}}
+
+Consider U\+A\+RT was initialized and enabled.
+
+Coordinates are indexed from 0, 0 -\/ upper left corner of the display. Spark\+Fun Graphic L\+CD Serial Backpack has embedded firmware with character generator. The X and Y reference coordinates are used by the text generator to place text at specific locations on the screen. The coordinates refer to the upper left most pixel in the character space.
+
+If the offsets are within 6 pixels of the right edge of the screen or 8 pixels of the bottom, the text generator will revert to the next logical line for text so as to print a whole character and not parts. \mbox{\Hypertarget{serial_g_l_c_d_8h_ae8753c791c68ffcca564587e23e70bdd}\label{serial_g_l_c_d_8h_ae8753c791c68ffcca564587e23e70bdd}} 
+\index{serialGLCD.h@{serialGLCD.h}!serialGLCD\_reverse@{serialGLCD\_reverse}}
+\index{serialGLCD\_reverse@{serialGLCD\_reverse}!serialGLCD.h@{serialGLCD.h}}
+\subsubsection{\texorpdfstring{serialGLCD\_reverse()}{serialGLCD\_reverse()}}
+{\footnotesize\ttfamily void serial\+G\+L\+C\+D\+\_\+reverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Serial A\+S\+C\+II commands -\/ toggle reverse display mode. 
+
+Toggle reverse display mode.
+
+\href{https://learn.sparkfun.com/tutorials/serial-graphic-lcd-hookup/?_ga=1.12355956.1126191215.1366741676}{\texttt{ Spark\+Fun items}}
+
+Consider U\+A\+RT was initialized and enabled. Setting the reverse mode causes the screen to immediately clear with the new background. If the display is turned off while in reverse mode, it will next power up in reverse mode. \mbox{\Hypertarget{serial_g_l_c_d_8h_afcb2488092e0deff3358181b2c56c1e0}\label{serial_g_l_c_d_8h_afcb2488092e0deff3358181b2c56c1e0}} 
+\index{serialGLCD.h@{serialGLCD.h}!serialGLCD\_sendChar@{serialGLCD\_sendChar}}
+\index{serialGLCD\_sendChar@{serialGLCD\_sendChar}!serialGLCD.h@{serialGLCD.h}}
+\subsubsection{\texorpdfstring{serialGLCD\_sendChar()}{serialGLCD\_sendChar()}}
+{\footnotesize\ttfamily void serial\+G\+L\+C\+D\+\_\+send\+Char (\begin{DoxyParamCaption}\item[{unsigned char}]{my\+Char }\end{DoxyParamCaption})}
+
+
+
+Serial G\+L\+CD -\/ Send A Character. 
+
+This command send a character to G\+L\+CD
+
+\href{https://learn.sparkfun.com/tutorials/serial-graphic-lcd-hookup/?_ga=1.12355956.1126191215.1366741676}{\texttt{ Spark\+Fun items}}
+
+
+\begin{DoxyItemize}
+\item Consider U\+A\+RT was initialized and enabled.
+\item Consider needed X, Y coordinates have been set before.
+\item Character is being displayed at current X, Y positon. 
+\end{DoxyItemize}\mbox{\Hypertarget{serial_g_l_c_d_8h_af9a185387ed5b23392393cdcbc030e6a}\label{serial_g_l_c_d_8h_af9a185387ed5b23392393cdcbc030e6a}} 
+\index{serialGLCD.h@{serialGLCD.h}!serialGLCD\_sendString@{serialGLCD\_sendString}}
+\index{serialGLCD\_sendString@{serialGLCD\_sendString}!serialGLCD.h@{serialGLCD.h}}
+\subsubsection{\texorpdfstring{serialGLCD\_sendString()}{serialGLCD\_sendString()}}
+{\footnotesize\ttfamily void serial\+G\+L\+C\+D\+\_\+send\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{my\+String }\end{DoxyParamCaption})}
+
+
+
+Serial G\+L\+CD -\/ Send A String of Characters. 
+
+This command send a string of characters to G\+L\+CD
+
+\href{https://learn.sparkfun.com/tutorials/serial-graphic-lcd-hookup/?_ga=1.12355956.1126191215.1366741676}{\texttt{ Spark\+Fun items}}
+
+
+\begin{DoxyItemize}
+\item Consider U\+A\+RT was initialized and enabled.
+\item Consider needed X, Y coordinates have been set before.
+\item First character of the string is being displayed at current X, Y position. 
+\end{DoxyItemize}

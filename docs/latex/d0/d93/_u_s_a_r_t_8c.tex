@@ -1,0 +1,65 @@
+\hypertarget{_u_s_a_r_t_8c}{}\section{D\+:/\+Projects/serial\+G\+L\+C\+D128x64\+\_\+avr/serial\+G\+L\+C\+D/serial\+G\+L\+C\+D/\+U\+S\+A\+RT.c File Reference}
+\label{_u_s_a_r_t_8c}\index{D:/Projects/serialGLCD128x64\_avr/serialGLCD/serialGLCD/USART.c@{D:/Projects/serialGLCD128x64\_avr/serialGLCD/serialGLCD/USART.c}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_u_s_a_r_t_8c_a17613ca61f75959783e93e51d3d5b3d3}{U\+A\+R\+T0\+\_\+\+Init}} (uint16\+\_\+t baud, char Async\+Double\+Speed, char data\+Length, char Parity, char stopbits)
+\begin{DoxyCompactList}\small\item\em Utilize U\+S\+A\+RT communication with atmega328p. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_s_a_r_t_8c_a59111d7ad26b19ab1d4b7b09197f79ae}{wait\+\_\+while\+\_\+\+U\+A\+R\+T0\+\_\+is\+\_\+busy}} ()
+\begin{DoxyCompactList}\small\item\em Wait if U\+S\+A\+RT is busy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_u_s_a_r_t_8c_a17613ca61f75959783e93e51d3d5b3d3}\label{_u_s_a_r_t_8c_a17613ca61f75959783e93e51d3d5b3d3}} 
+\index{USART.c@{USART.c}!UART0\_Init@{UART0\_Init}}
+\index{UART0\_Init@{UART0\_Init}!USART.c@{USART.c}}
+\subsubsection{\texorpdfstring{UART0\_Init()}{UART0\_Init()}}
+{\footnotesize\ttfamily void U\+A\+R\+T0\+\_\+\+Init (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{baud,  }\item[{char}]{Async\+Double\+Speed,  }\item[{char}]{data\+Length,  }\item[{char}]{Parity,  }\item[{char}]{stopbits }\end{DoxyParamCaption})}
+
+
+
+Utilize U\+S\+A\+RT communication with atmega328p. 
+
+\mbox{\hyperlink{_u_s_a_r_t_8c}{U\+S\+A\+R\+T.\+c}}
+
+\begin{DoxyDate}{Date}
+Created\+: 30.\+6.\+2019 г. 17\+:06\+:22 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\+: Simeon Neykov
+\end{DoxyAuthor}
+U\+A\+RT Initialization for Asynchronous serial communication.
+
+U\+A\+RT specifications (baud rate, data length , parity, stop).
+
+
+\begin{DoxyItemize}
+\item Setting the baud rate
+\begin{DoxyItemize}
+\item K is used to take the effect on the prescaller U\+B\+RR when double speed is considered
+\item uint16\+\_\+t baud is also prescalled to avoid overflow when high speed bit rate is needed, as per example of Spark\+Fun\textquotesingle{}s serial L\+CD
+\end{DoxyItemize}
+\item Setting frame format, 8bit, no parity, 1 stop
+\begin{DoxyItemize}
+\item 1 stop bit is by default. Still better to have setting implemented
+\item Parity should consider odd, even as well no parity
+\end{DoxyItemize}
+\item Enable transmit or/and receive operation
+\begin{DoxyItemize}
+\item Transmitter is enabled by setting the Transmit Enable (T\+X\+EN) bit in the U\+C\+S\+RnB Register
+\item Receiver is enabled by setting the Receive Enable (R\+X\+EN) bit in the U\+C\+S\+RnB Register 
+\end{DoxyItemize}
+\end{DoxyItemize}\mbox{\Hypertarget{_u_s_a_r_t_8c_a59111d7ad26b19ab1d4b7b09197f79ae}\label{_u_s_a_r_t_8c_a59111d7ad26b19ab1d4b7b09197f79ae}} 
+\index{USART.c@{USART.c}!wait\_while\_UART0\_is\_busy@{wait\_while\_UART0\_is\_busy}}
+\index{wait\_while\_UART0\_is\_busy@{wait\_while\_UART0\_is\_busy}!USART.c@{USART.c}}
+\subsubsection{\texorpdfstring{wait\_while\_UART0\_is\_busy()}{wait\_while\_UART0\_is\_busy()}}
+{\footnotesize\ttfamily void wait\+\_\+while\+\_\+\+U\+A\+R\+T0\+\_\+is\+\_\+busy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Wait if U\+S\+A\+RT is busy. 
+
+This function checks and wait until U\+S\+A\+RT has finished previous transmission. One should use this each time before loading the transmit buffer U\+D\+Rn with new data. 
