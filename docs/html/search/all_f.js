@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['wait_5fwhile_5fuart0_5fis_5fbusy',['wait_while_UART0_is_busy',['../d0/d93/_u_s_a_r_t_8c.html#a59111d7ad26b19ab1d4b7b09197f79ae',1,'wait_while_UART0_is_busy():&#160;USART.c'],['../db/da5/_u_s_a_r_t_8h.html#a59111d7ad26b19ab1d4b7b09197f79ae',1,'wait_while_UART0_is_busy():&#160;USART.c']]]
+  ['text',['text',['../df/d6c/struct_menu_structure.html#a0726774a008bbbd0740ce033cd5b7c7a',1,'MenuStructure']]],
+  ['toggle',['TOGGLE',['../d4/dbf/main_8h.html#a28b6db0a9f2cd8c50c66bdf94a76e9c2',1,'main.h']]],
+  ['true',['TRUE',['../d4/dbf/main_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'main.h']]]
 ];

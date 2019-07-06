@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Serial GLCD 128x64: D:/Projects/serialGLCD128x64_avr/serialGLCD/serialGLCD/main.c File Reference</title>
+<title>Serial GLCD 128x64: main.c File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -61,16 +61,10 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="../../dir_60aac55d0d8d915bc774f9ed229735ed.html">serialGLCD</a></li>  </ul>
-</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">main.c File Reference</div>  </div>
 </div><!--header-->
@@ -80,444 +74,33 @@ $(function() {
 <code>#include &lt;util/delay.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../dc/dd7/serial_g_l_c_d_8h_source.html">serialGLCD.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../db/da5/_u_s_a_r_t_8h_source.html">USART.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/dd9/char_menu_8h_source.html">charMenu.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ab811d8c6ff3a505312d3276590444289"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#ab811d8c6ff3a505312d3276590444289">LOW</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:ab811d8c6ff3a505312d3276590444289"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bb885982ff66a2e0a0a45a8ee9c35e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#a5bb885982ff66a2e0a0a45a8ee9c35e2">HIGH</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a5bb885982ff66a2e0a0a45a8ee9c35e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41f9c5fb8b08eb5dc3edce4dcb37fee7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a41f9c5fb8b08eb5dc3edce4dcb37fee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65e9886d74aaee76545e83dd09011727"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#a65e9886d74aaee76545e83dd09011727">false</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:a65e9886d74aaee76545e83dd09011727"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa9ec3349b5aa48c04520f64980a3656"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#aaa9ec3349b5aa48c04520f64980a3656">dirLEDs_PORT</a>&#160;&#160;&#160;DDRC</td></tr>
-<tr class="separator:aaa9ec3349b5aa48c04520f64980a3656"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e5e882ee0b8e6bfab6e8c00079168b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#a7e5e882ee0b8e6bfab6e8c00079168b2">LEDs_PORT</a>&#160;&#160;&#160;PORTC</td></tr>
-<tr class="separator:a7e5e882ee0b8e6bfab6e8c00079168b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31e20330f8ce94e0dd10b005a15c5898"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#a31e20330f8ce94e0dd10b005a15c5898">LED_RED</a>&#160;&#160;&#160;6</td></tr>
-<tr class="separator:a31e20330f8ce94e0dd10b005a15c5898"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0998333b3a54bf7e3a466c41287853ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#a0998333b3a54bf7e3a466c41287853ba">LED_WHITE</a>&#160;&#160;&#160;5</td></tr>
-<tr class="separator:a0998333b3a54bf7e3a466c41287853ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad775d2fd0becd9547c97bcd13ce40a5e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#ad775d2fd0becd9547c97bcd13ce40a5e">dirPUSHBUTTON_PORT</a>&#160;&#160;&#160;DDRC</td></tr>
-<tr class="separator:ad775d2fd0becd9547c97bcd13ce40a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27d67679b8d30620d698bf3617960bb5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#a27d67679b8d30620d698bf3617960bb5">PUSHBUTTON_PORT</a>&#160;&#160;&#160;PORTC</td></tr>
-<tr class="separator:a27d67679b8d30620d698bf3617960bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea79a8b485030f3957b6f9383d6f3a56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#aea79a8b485030f3957b6f9383d6f3a56">readPUSHBUTTON</a>&#160;&#160;&#160;PINC</td></tr>
-<tr class="separator:aea79a8b485030f3957b6f9383d6f3a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a574aa1b882cec3e74d0a8e36c955839c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#a574aa1b882cec3e74d0a8e36c955839c">BUTTON_enter</a>&#160;&#160;&#160;4</td></tr>
-<tr class="separator:a574aa1b882cec3e74d0a8e36c955839c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2736882706f7e6ef0b1eaaf2babed615"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#a2736882706f7e6ef0b1eaaf2babed615">BUTTON_down</a>&#160;&#160;&#160;3</td></tr>
-<tr class="separator:a2736882706f7e6ef0b1eaaf2babed615"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7db38fd9d8dce99372e49cdbe315b9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#af7db38fd9d8dce99372e49cdbe315b9b">BUTTON_up</a>&#160;&#160;&#160;2</td></tr>
-<tr class="separator:af7db38fd9d8dce99372e49cdbe315b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e87752e53f833366370b733f25ce098"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#a8e87752e53f833366370b733f25ce098">INPUT</a>(port,  pin)&#160;&#160;&#160;port &amp;= ~(1&lt;&lt;pin)</td></tr>
-<tr class="memdesc:a8e87752e53f833366370b733f25ce098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines DDR register and pin/bit number as an input.  <a href="#a8e87752e53f833366370b733f25ce098">More...</a><br /></td></tr>
-<tr class="separator:a8e87752e53f833366370b733f25ce098"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd77de37e90eeb183f24b8ec0187d6b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#acd77de37e90eeb183f24b8ec0187d6b4">OUTPUT</a>(port,  pin)&#160;&#160;&#160;port |= (1&lt;&lt;pin)</td></tr>
-<tr class="memdesc:acd77de37e90eeb183f24b8ec0187d6b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines DDR register and pin/bit number as an output.  <a href="#acd77de37e90eeb183f24b8ec0187d6b4">More...</a><br /></td></tr>
-<tr class="separator:acd77de37e90eeb183f24b8ec0187d6b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae940c8ff2fff05f0606ce9000e762af5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#ae940c8ff2fff05f0606ce9000e762af5">SET</a>(port,  pin)&#160;&#160;&#160;port |= (1&lt;&lt;pin)</td></tr>
-<tr class="memdesc:ae940c8ff2fff05f0606ce9000e762af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines PORT register and set pin/bit number to HIGH.  <a href="#ae940c8ff2fff05f0606ce9000e762af5">More...</a><br /></td></tr>
-<tr class="separator:ae940c8ff2fff05f0606ce9000e762af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb997ebe26f642ebbe6f82d48c1deff5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#abb997ebe26f642ebbe6f82d48c1deff5">CLEAR</a>(port,  pin)&#160;&#160;&#160;port &amp;= ~(1&lt;&lt;pin)</td></tr>
-<tr class="memdesc:abb997ebe26f642ebbe6f82d48c1deff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines PORT register and set pin/bit number to LOW.  <a href="#abb997ebe26f642ebbe6f82d48c1deff5">More...</a><br /></td></tr>
-<tr class="separator:abb997ebe26f642ebbe6f82d48c1deff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28b6db0a9f2cd8c50c66bdf94a76e9c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#a28b6db0a9f2cd8c50c66bdf94a76e9c2">TOGGLE</a>(port,  pin)&#160;&#160;&#160;port ^= (1&lt;&lt;pin)</td></tr>
-<tr class="memdesc:a28b6db0a9f2cd8c50c66bdf94a76e9c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines PORT register and toggles the bit number.  <a href="#a28b6db0a9f2cd8c50c66bdf94a76e9c2">More...</a><br /></td></tr>
-<tr class="separator:a28b6db0a9f2cd8c50c66bdf94a76e9c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00cd49c71499ccba791ba610a02eb179"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#a00cd49c71499ccba791ba610a02eb179">READ</a>(port,  pin)&#160;&#160;&#160;(port &amp; (1&lt;&lt;pin))</td></tr>
-<tr class="memdesc:a00cd49c71499ccba791ba610a02eb179"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines PINx register and read the pin value at respective bit number.  <a href="#a00cd49c71499ccba791ba610a02eb179">More...</a><br /></td></tr>
-<tr class="separator:a00cd49c71499ccba791ba610a02eb179"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a9dfc35a57991e438306be4d701167ba6"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#a9dfc35a57991e438306be4d701167ba6">sampleData</a> [] = {'B', 'a', 's', 'i', ' ', 'M', 'a', 'm', 'a', 't', 'a'}</td></tr>
-<tr class="separator:a9dfc35a57991e438306be4d701167ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a2736882706f7e6ef0b1eaaf2babed615"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2736882706f7e6ef0b1eaaf2babed615">&#9670;&nbsp;</a></span>BUTTON_down</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUTTON_down&#160;&#160;&#160;3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a574aa1b882cec3e74d0a8e36c955839c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a574aa1b882cec3e74d0a8e36c955839c">&#9670;&nbsp;</a></span>BUTTON_enter</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUTTON_enter&#160;&#160;&#160;4</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af7db38fd9d8dce99372e49cdbe315b9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7db38fd9d8dce99372e49cdbe315b9b">&#9670;&nbsp;</a></span>BUTTON_up</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUTTON_up&#160;&#160;&#160;2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abb997ebe26f642ebbe6f82d48c1deff5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb997ebe26f642ebbe6f82d48c1deff5">&#9670;&nbsp;</a></span>CLEAR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CLEAR</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">port, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">pin&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;port &amp;= ~(1&lt;&lt;pin)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Defines PORT register and set pin/bit number to LOW. </p>
-
-</div>
-</div>
-<a id="aaa9ec3349b5aa48c04520f64980a3656"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa9ec3349b5aa48c04520f64980a3656">&#9670;&nbsp;</a></span>dirLEDs_PORT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define dirLEDs_PORT&#160;&#160;&#160;DDRC</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad775d2fd0becd9547c97bcd13ce40a5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad775d2fd0becd9547c97bcd13ce40a5e">&#9670;&nbsp;</a></span>dirPUSHBUTTON_PORT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define dirPUSHBUTTON_PORT&#160;&#160;&#160;DDRC</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a65e9886d74aaee76545e83dd09011727"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65e9886d74aaee76545e83dd09011727">&#9670;&nbsp;</a></span>false</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define false&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5bb885982ff66a2e0a0a45a8ee9c35e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bb885982ff66a2e0a0a45a8ee9c35e2">&#9670;&nbsp;</a></span>HIGH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define HIGH&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8e87752e53f833366370b733f25ce098"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e87752e53f833366370b733f25ce098">&#9670;&nbsp;</a></span>INPUT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define INPUT</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">port, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">pin&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;port &amp;= ~(1&lt;&lt;pin)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Defines DDR register and pin/bit number as an input. </p>
-
-</div>
-</div>
-<a id="a31e20330f8ce94e0dd10b005a15c5898"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31e20330f8ce94e0dd10b005a15c5898">&#9670;&nbsp;</a></span>LED_RED</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LED_RED&#160;&#160;&#160;6</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0998333b3a54bf7e3a466c41287853ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0998333b3a54bf7e3a466c41287853ba">&#9670;&nbsp;</a></span>LED_WHITE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LED_WHITE&#160;&#160;&#160;5</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7e5e882ee0b8e6bfab6e8c00079168b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e5e882ee0b8e6bfab6e8c00079168b2">&#9670;&nbsp;</a></span>LEDs_PORT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LEDs_PORT&#160;&#160;&#160;PORTC</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab811d8c6ff3a505312d3276590444289"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab811d8c6ff3a505312d3276590444289">&#9670;&nbsp;</a></span>LOW</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LOW&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acd77de37e90eeb183f24b8ec0187d6b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd77de37e90eeb183f24b8ec0187d6b4">&#9670;&nbsp;</a></span>OUTPUT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OUTPUT</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">port, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">pin&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;port |= (1&lt;&lt;pin)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Defines DDR register and pin/bit number as an output. </p>
-
-</div>
-</div>
-<a id="a27d67679b8d30620d698bf3617960bb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27d67679b8d30620d698bf3617960bb5">&#9670;&nbsp;</a></span>PUSHBUTTON_PORT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PUSHBUTTON_PORT&#160;&#160;&#160;PORTC</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a00cd49c71499ccba791ba610a02eb179"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00cd49c71499ccba791ba610a02eb179">&#9670;&nbsp;</a></span>READ</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define READ</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">port, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">pin&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;(port &amp; (1&lt;&lt;pin))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Defines PINx register and read the pin value at respective bit number. </p>
-
-</div>
-</div>
-<a id="aea79a8b485030f3957b6f9383d6f3a56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea79a8b485030f3957b6f9383d6f3a56">&#9670;&nbsp;</a></span>readPUSHBUTTON</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define readPUSHBUTTON&#160;&#160;&#160;PINC</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae940c8ff2fff05f0606ce9000e762af5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae940c8ff2fff05f0606ce9000e762af5">&#9670;&nbsp;</a></span>SET</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SET</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">port, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">pin&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;port |= (1&lt;&lt;pin)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Defines PORT register and set pin/bit number to HIGH. </p>
-
-</div>
-</div>
-<a id="a28b6db0a9f2cd8c50c66bdf94a76e9c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28b6db0a9f2cd8c50c66bdf94a76e9c2">&#9670;&nbsp;</a></span>TOGGLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TOGGLE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">port, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">pin&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;port ^= (1&lt;&lt;pin)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Defines PORT register and toggles the bit number. </p>
-
-</div>
-</div>
-<a id="a41f9c5fb8b08eb5dc3edce4dcb37fee7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41f9c5fb8b08eb5dc3edce4dcb37fee7">&#9670;&nbsp;</a></span>true</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define true&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h2>Main function</h2>
+<ul>
+<li>Declare and initialize needed software variables<ul>
+<li>buttonPressed_delay, buttonReleased_delay are used for push button debouncing</li>
+<li>update_menu controls menu to be updated only when changes are supposed (button pressed, etc)</li>
+<li>initialize menu item selector</li>
+</ul>
+</li>
+<li>MCU's ports and pins definitions and initializations</li>
+<li>USART Initialization</li>
+<li>Intro screen (just for fun ;) and a bit for some debuging purposes)</li>
+<li>Infinite loop<ul>
+<li>Show menu. Since this is slow process call this function only when the menu is to be updated (e.g. button is pressed)</li>
+<li>Check buttons and act respectively. Consider debouncing delays. </li>
+</ul>
+</li>
+</ul>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a840291bc02cba5474a4cb46a9b9566fe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&nbsp;</a></span>main()</h2>
 
@@ -533,28 +116,36 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a9dfc35a57991e438306be4d701167ba6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9dfc35a57991e438306be4d701167ba6">&#9670;&nbsp;</a></span>sampleData</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned char sampleData[] = {'B', 'a', 's', 'i', ' ', 'M', 'a', 'm', 'a', 't', 'a'}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<h2>MCUs ports initializations</h2>
+<ul>
+<li>OUTPUT sets a particular pin as an output in the corresponding DDR register</li>
+<li>INPUT sets a particular pin as an input in the corresponding DDR register</li>
+<li>CLEAR sets a particular output pin to LOW</li>
+<li>SET sets a particular output pin to HIGH</li>
+<li>TOGGLE changes the state of the selected otput pin</li>
+</ul>
+<h2>USART Initialization in asynchronous mode</h2>
+<ul>
+<li>set the baud</li>
+<li>set the data framer (8bits, 1 stop bit, no parity)</li>
+<li>enable UART</li>
+</ul>
+<h2>Intro Screen</h2>
+<ul>
+<li>clear screen</li>
+<li>after 2 sec delay put an intro screen</li>
+</ul>
+<h2>Infinite loop</h2>
+<ul>
+<li>Browse the menu respectively</li>
+</ul>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jul 6 2019 22:00:41 for Serial GLCD 128x64 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

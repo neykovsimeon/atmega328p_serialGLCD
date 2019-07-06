@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Serial GLCD 128x64: D:/Projects/serialGLCD128x64_avr/serialGLCD/serialGLCD/serialGLCD.h File Reference</title>
+<title>Serial GLCD 128x64: serialGLCD.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -61,10 +61,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="../../dir_60aac55d0d8d915bc774f9ed229735ed.html">serialGLCD</a></li>  </ul>
-</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
@@ -81,29 +77,75 @@ $(function() {
 Macros</h2></td></tr>
 <tr class="memitem:a9e19d3e9d60891fa4e86aa6f63dc1a2b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dd7/serial_g_l_c_d_8h.html#a9e19d3e9d60891fa4e86aa6f63dc1a2b">serialGLCD</a></td></tr>
 <tr class="separator:a9e19d3e9d60891fa4e86aa6f63dc1a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76aa3f6890bdcec3f071b91b358e1eae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dd7/serial_g_l_c_d_8h.html#a76aa3f6890bdcec3f071b91b358e1eae">LCD12864</a></td></tr>
+<tr class="separator:a76aa3f6890bdcec3f071b91b358e1eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0234d53560fd3d13041d35bb57d0f824"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dd7/serial_g_l_c_d_8h.html#a0234d53560fd3d13041d35bb57d0f824">INITIAL_pixel_MAXX</a>&#160;&#160;&#160;127</td></tr>
+<tr class="separator:a0234d53560fd3d13041d35bb57d0f824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6c91d93ea63d36c9ddd000ca9cd67ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dd7/serial_g_l_c_d_8h.html#ad6c91d93ea63d36c9ddd000ca9cd67ce">INITIAL_pixel_MAXY</a>&#160;&#160;&#160;63</td></tr>
+<tr class="separator:ad6c91d93ea63d36c9ddd000ca9cd67ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9a3a97eb67649a289a9224902b3e80ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dd7/serial_g_l_c_d_8h.html#a9a3a97eb67649a289a9224902b3e80ee">serialGLCD_backlight</a> (unsigned char backlight)</td></tr>
-<tr class="memdesc:a9a3a97eb67649a289a9224902b3e80ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serial ASCII commands - backlight duty cycle.  <a href="#a9a3a97eb67649a289a9224902b3e80ee">More...</a><br /></td></tr>
 <tr class="separator:a9a3a97eb67649a289a9224902b3e80ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5666f2c788e6fac294ddf8304e898fce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dd7/serial_g_l_c_d_8h.html#a5666f2c788e6fac294ddf8304e898fce">serialGLCD_gotoPixel_XY</a> (unsigned char PixelX, unsigned char PixelY)</td></tr>
-<tr class="memdesc:a5666f2c788e6fac294ddf8304e898fce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serial ASCII commands - Set X and Y Coordinates.  <a href="#a5666f2c788e6fac294ddf8304e898fce">More...</a><br /></td></tr>
-<tr class="separator:a5666f2c788e6fac294ddf8304e898fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add931166f0ddad29efa2b31e44906f55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dd7/serial_g_l_c_d_8h.html#add931166f0ddad29efa2b31e44906f55">serialGLCD_gotoPixel_XY</a> (unsigned char pixelX, unsigned char pixelY)</td></tr>
+<tr class="separator:add931166f0ddad29efa2b31e44906f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40ba8d903b4fc28343a0910388d20589"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dd7/serial_g_l_c_d_8h.html#a40ba8d903b4fc28343a0910388d20589">serialGLCD_goto21x8_XY</a> (unsigned char refX, unsigned char refY)</td></tr>
+<tr class="separator:a40ba8d903b4fc28343a0910388d20589"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8753c791c68ffcca564587e23e70bdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dd7/serial_g_l_c_d_8h.html#ae8753c791c68ffcca564587e23e70bdd">serialGLCD_reverse</a> ()</td></tr>
-<tr class="memdesc:ae8753c791c68ffcca564587e23e70bdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serial ASCII commands - toggle reverse display mode.  <a href="#ae8753c791c68ffcca564587e23e70bdd">More...</a><br /></td></tr>
 <tr class="separator:ae8753c791c68ffcca564587e23e70bdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af81a102f93ad0e110e6692a7fbbe3603"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dd7/serial_g_l_c_d_8h.html#af81a102f93ad0e110e6692a7fbbe3603">serialGLCD_clear</a> ()</td></tr>
-<tr class="memdesc:af81a102f93ad0e110e6692a7fbbe3603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serial ASCII commands - Clear Screen.  <a href="#af81a102f93ad0e110e6692a7fbbe3603">More...</a><br /></td></tr>
 <tr class="separator:af81a102f93ad0e110e6692a7fbbe3603"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcb2488092e0deff3358181b2c56c1e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dd7/serial_g_l_c_d_8h.html#afcb2488092e0deff3358181b2c56c1e0">serialGLCD_sendChar</a> (unsigned char myChar)</td></tr>
-<tr class="memdesc:afcb2488092e0deff3358181b2c56c1e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serial GLCD - Send A Character.  <a href="#afcb2488092e0deff3358181b2c56c1e0">More...</a><br /></td></tr>
 <tr class="separator:afcb2488092e0deff3358181b2c56c1e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9a185387ed5b23392393cdcbc030e6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dd7/serial_g_l_c_d_8h.html#af9a185387ed5b23392393cdcbc030e6a">serialGLCD_sendString</a> (char *myString)</td></tr>
-<tr class="memdesc:af9a185387ed5b23392393cdcbc030e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serial GLCD - Send A String of Characters.  <a href="#af9a185387ed5b23392393cdcbc030e6a">More...</a><br /></td></tr>
 <tr class="separator:af9a185387ed5b23392393cdcbc030e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac33b7640ee2eef7266d3edef65c5816c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dd7/serial_g_l_c_d_8h.html#ac33b7640ee2eef7266d3edef65c5816c">serialGLCD_drawBox</a> (unsigned char TopLeftX, unsigned char TopLeftY, unsigned char BottomRightX, unsigned char BottomRightY, unsigned char draw)</td></tr>
+<tr class="separator:ac33b7640ee2eef7266d3edef65c5816c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a0234d53560fd3d13041d35bb57d0f824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0234d53560fd3d13041d35bb57d0f824">&#9670;&nbsp;</a></span>INITIAL_pixel_MAXX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INITIAL_pixel_MAXX&#160;&#160;&#160;127</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad6c91d93ea63d36c9ddd000ca9cd67ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6c91d93ea63d36c9ddd000ca9cd67ce">&#9670;&nbsp;</a></span>INITIAL_pixel_MAXY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INITIAL_pixel_MAXY&#160;&#160;&#160;63</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a76aa3f6890bdcec3f071b91b358e1eae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76aa3f6890bdcec3f071b91b358e1eae">&#9670;&nbsp;</a></span>LCD12864</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD12864</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a9e19d3e9d60891fa4e86aa6f63dc1a2b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e19d3e9d60891fa4e86aa6f63dc1a2b">&#9670;&nbsp;</a></span>serialGLCD</h2>
 
@@ -134,8 +176,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Serial ASCII commands - backlight duty cycle. </p>
+<h2>Serial ASCII commands - backlight duty cycle.</h2>
 <p>Set back light Duty Cycle.</p>
 <p><a href="https://learn.sparkfun.com/tutorials/serial-graphic-lcd-hookup/?_ga=1.12355956.1126191215.1366741676">SparkFun items</a></p>
 <p>Consider UART was initialized and enabled. Setting the value to zero turns the back light off, setting it at 100 or above turns it full on. Intermediate values set it somewhere in- between. </p>
@@ -156,31 +197,48 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Serial ASCII commands - Clear Screen. </p>
+<h2>Serial ASCII commands - Clear Screen.</h2>
 <p>This command clears the screen of all written pixels.</p>
 <p><a href="https://learn.sparkfun.com/tutorials/serial-graphic-lcd-hookup/?_ga=1.12355956.1126191215.1366741676">SparkFun items</a></p>
 <p>Consider UART was initialized and enabled. If you're operating in normal mode, all pixels are reset. If you're operating in reverse mode, all pixels are set. </p>
 
 </div>
 </div>
-<a id="a5666f2c788e6fac294ddf8304e898fce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5666f2c788e6fac294ddf8304e898fce">&#9670;&nbsp;</a></span>serialGLCD_gotoPixel_XY()</h2>
+<a id="ac33b7640ee2eef7266d3edef65c5816c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac33b7640ee2eef7266d3edef65c5816c">&#9670;&nbsp;</a></span>serialGLCD_drawBox()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void serialGLCD_gotoPixel_XY </td>
+          <td class="memname">void serialGLCD_drawBox </td>
           <td>(</td>
           <td class="paramtype">unsigned char&#160;</td>
-          <td class="paramname"><em>PixelX</em>, </td>
+          <td class="paramname"><em>TopLeftX</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned char&#160;</td>
-          <td class="paramname"><em>PixelY</em>&#160;</td>
+          <td class="paramname"><em>TopLeftY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>BottomRightX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>BottomRightY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>draw</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -189,13 +247,107 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Serial ASCII commands - Set X and Y Coordinates. </p>
+<h2>Serial ASCII commands - drawBox.</h2>
 <p>Set X and Y referred to the Pixel level coordinates</p>
 <p><a href="https://learn.sparkfun.com/tutorials/serial-graphic-lcd-hookup/?_ga=1.12355956.1126191215.1366741676">SparkFun items</a></p>
 <p>Consider UART was initialized and enabled.</p>
+<p>Sending hex value 0x0F followed by two sets of (x, y) coordinates defining opposite corners of the box, followed by a 0 or 1 determines whether to draw or erase the box. This command is exactly like the draw line command, but instead of drawing a line you get a box that exactly contains the line between the given coordinates.</p>
+<p>Coordinates are indexed from 0, 0 referred to the upper left corner of the display. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TopLeftX,TopLeftY</td><td>Coordinates of the upper left corner of the box. </td></tr>
+    <tr><td class="paramname">BottomRightX,BottomRightY</td><td>Coordinates of the upper left corner of the box. </td></tr>
+    <tr><td class="paramname">draw</td><td>Defines whether we draw the box or erase the box </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a40ba8d903b4fc28343a0910388d20589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40ba8d903b4fc28343a0910388d20589">&#9670;&nbsp;</a></span>serialGLCD_goto21x8_XY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void serialGLCD_goto21x8_XY </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>refX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>refY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<h2>Serial ASCII commands - Set refX and refY Coordinates referred to 21x8 display format.</h2>
+<p>Coordinate transformation is valid for 128x64 pixels display and 6x8 character format.</p>
+<p><a href="https://learn.sparkfun.com/tutorials/serial-graphic-lcd-hookup/?_ga=1.12355956.1126191215.1366741676">SparkFun items</a></p>
+<p>Consider UART was initialized and enabled.</p><ul>
+<li>Details:<ul>
+<li>21x8 format emulates character display with 21 symbols on 8 rows</li>
+<li>Coordinates are indexed from 0, 0</li>
+<li>Coordinates are referred to 6x8 pixels sized characters <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">refX</td><td>range 0, 20 </td></tr>
+    <tr><td class="paramname">refY</td><td>range 0, 7</td></tr>
+  </table>
+  </dd>
+</dl>
+Note: These ranges are valid for 128x64 type display. These should be aligned for a different type / format LCD display. </li>
+</ul>
+</li>
+</ul>
+<p>&lt; pixelX range 0, 127</p>
+<p>&lt; pixelY range 0, 63 </p>
+
+</div>
+</div>
+<a id="add931166f0ddad29efa2b31e44906f55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add931166f0ddad29efa2b31e44906f55">&#9670;&nbsp;</a></span>serialGLCD_gotoPixel_XY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void serialGLCD_gotoPixel_XY </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>pixelX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>pixelY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<h2>Serial ASCII commands - Set X and Y pixel coordinates.</h2>
+<p><a href="https://learn.sparkfun.com/tutorials/serial-graphic-lcd-hookup/?_ga=1.12355956.1126191215.1366741676">SparkFun items</a></p>
+<p>Consider UART was initialized and enabled.</p>
 <p>Coordinates are indexed from 0, 0 - upper left corner of the display. SparkFun Graphic LCD Serial Backpack has embedded firmware with character generator. The X and Y reference coordinates are used by the text generator to place text at specific locations on the screen. The coordinates refer to the upper left most pixel in the character space.</p>
-<p>If the offsets are within 6 pixels of the right edge of the screen or 8 pixels of the bottom, the text generator will revert to the next logical line for text so as to print a whole character and not parts. </p>
+<p>If the offsets are within 6 pixels of the right edge of the screen or 8 pixels of the bottom, the text generator will revert to the next logical line for text so as to print a whole character and not parts.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pixelX</td><td>range 0, 127 </td></tr>
+    <tr><td class="paramname">pixelY</td><td>range 0, 63 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -213,8 +365,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Serial ASCII commands - toggle reverse display mode. </p>
+<h2>Serial ASCII commands - toggle reverse display mode.</h2>
 <p>Toggle reverse display mode.</p>
 <p><a href="https://learn.sparkfun.com/tutorials/serial-graphic-lcd-hookup/?_ga=1.12355956.1126191215.1366741676">SparkFun items</a></p>
 <p>Consider UART was initialized and enabled. Setting the reverse mode causes the screen to immediately clear with the new background. If the display is turned off while in reverse mode, it will next power up in reverse mode. </p>
@@ -236,14 +387,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Serial GLCD - Send A Character. </p>
+<h2>Serial GLCD - Send an ASCII Character.</h2>
 <p>This command send a character to GLCD</p>
 <p><a href="https://learn.sparkfun.com/tutorials/serial-graphic-lcd-hookup/?_ga=1.12355956.1126191215.1366741676">SparkFun items</a></p>
 <ul>
 <li>Consider UART was initialized and enabled.</li>
 <li>Consider needed X, Y coordinates have been set before.</li>
-<li>Character is being displayed at current X, Y positon. </li>
+<li>Character is being displayed at current X, Y position and it is moved forward to next position, thus the display is acting like the known type character LCD.</li>
+<li>Consider needed time for the backpack's microcontroller on LCD module to do its stuffs.</li>
+<li>Initially used added delay in _sendChar function but finally moved it into <a class="el" href="../../d0/d93/_u_s_a_r_t_8c.html#a82f73df3b03f2e6d0fe5d531f22b818a">wait_while_UART0_is_busy()</a>;</li>
+<li>Consider 5ms should be sufficient delay but could depends of the complexity of the screen we want to show </li>
 </ul>
 
 </div>
@@ -263,14 +416,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Serial GLCD - Send A String of Characters. </p>
+<h2>Serial GLCD - Send A String of Characters.</h2>
 <p>This command send a string of characters to GLCD</p>
 <p><a href="https://learn.sparkfun.com/tutorials/serial-graphic-lcd-hookup/?_ga=1.12355956.1126191215.1366741676">SparkFun items</a></p>
 <ul>
 <li>Consider UART was initialized and enabled.</li>
 <li>Consider needed X, Y coordinates have been set before.</li>
-<li>First character of the string is being displayed at current X, Y position. </li>
+<li>First character of the string is being displayed at current X, Y position and it is moved forward to next position.</li>
+<li>Thus the display is acting like the known type character LCD </li>
 </ul>
 
 </div>
@@ -278,7 +431,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jul 6 2019 22:00:41 for Serial GLCD 128x64 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

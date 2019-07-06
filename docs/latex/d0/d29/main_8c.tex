@@ -1,211 +1,39 @@
-\hypertarget{main_8c}{}\section{D\+:/\+Projects/serial\+G\+L\+C\+D128x64\+\_\+avr/serial\+G\+L\+C\+D/serial\+G\+L\+C\+D/main.c File Reference}
-\label{main_8c}\index{D:/Projects/serialGLCD128x64\_avr/serialGLCD/serialGLCD/main.c@{D:/Projects/serialGLCD128x64\_avr/serialGLCD/serialGLCD/main.c}}
+\hypertarget{main_8c}{}\section{main.\+c File Reference}
+\label{main_8c}\index{main.c@{main.c}}
 {\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$avr/io.\+h$>$}\newline
 {\ttfamily \#include $<$util/delay.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}serial\+G\+L\+C\+D.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}U\+S\+A\+R\+T.\+h\char`\"{}}\newline
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{main_8c_ab811d8c6ff3a505312d3276590444289}{L\+OW}}~0
-\item 
-\#define \mbox{\hyperlink{main_8c_a5bb885982ff66a2e0a0a45a8ee9c35e2}{H\+I\+GH}}~1
-\item 
-\#define \mbox{\hyperlink{main_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}}~1
-\item 
-\#define \mbox{\hyperlink{main_8c_a65e9886d74aaee76545e83dd09011727}{false}}~0
-\item 
-\#define \mbox{\hyperlink{main_8c_aaa9ec3349b5aa48c04520f64980a3656}{dir\+L\+E\+Ds\+\_\+\+P\+O\+RT}}~D\+D\+RC
-\item 
-\#define \mbox{\hyperlink{main_8c_a7e5e882ee0b8e6bfab6e8c00079168b2}{L\+E\+Ds\+\_\+\+P\+O\+RT}}~P\+O\+R\+TC
-\item 
-\#define \mbox{\hyperlink{main_8c_a31e20330f8ce94e0dd10b005a15c5898}{L\+E\+D\+\_\+\+R\+ED}}~6
-\item 
-\#define \mbox{\hyperlink{main_8c_a0998333b3a54bf7e3a466c41287853ba}{L\+E\+D\+\_\+\+W\+H\+I\+TE}}~5
-\item 
-\#define \mbox{\hyperlink{main_8c_ad775d2fd0becd9547c97bcd13ce40a5e}{dir\+P\+U\+S\+H\+B\+U\+T\+T\+O\+N\+\_\+\+P\+O\+RT}}~D\+D\+RC
-\item 
-\#define \mbox{\hyperlink{main_8c_a27d67679b8d30620d698bf3617960bb5}{P\+U\+S\+H\+B\+U\+T\+T\+O\+N\+\_\+\+P\+O\+RT}}~P\+O\+R\+TC
-\item 
-\#define \mbox{\hyperlink{main_8c_aea79a8b485030f3957b6f9383d6f3a56}{read\+P\+U\+S\+H\+B\+U\+T\+T\+ON}}~P\+I\+NC
-\item 
-\#define \mbox{\hyperlink{main_8c_a574aa1b882cec3e74d0a8e36c955839c}{B\+U\+T\+T\+O\+N\+\_\+enter}}~4
-\item 
-\#define \mbox{\hyperlink{main_8c_a2736882706f7e6ef0b1eaaf2babed615}{B\+U\+T\+T\+O\+N\+\_\+down}}~3
-\item 
-\#define \mbox{\hyperlink{main_8c_af7db38fd9d8dce99372e49cdbe315b9b}{B\+U\+T\+T\+O\+N\+\_\+up}}~2
-\item 
-\#define \mbox{\hyperlink{main_8c_a8e87752e53f833366370b733f25ce098}{I\+N\+P\+UT}}(port,  pin)~port \&= $\sim$(1$<$$<$pin)
-\begin{DoxyCompactList}\small\item\em Defines D\+DR register and pin/bit number as an input. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{main_8c_acd77de37e90eeb183f24b8ec0187d6b4}{O\+U\+T\+P\+UT}}(port,  pin)~port $\vert$= (1$<$$<$pin)
-\begin{DoxyCompactList}\small\item\em Defines D\+DR register and pin/bit number as an output. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{main_8c_ae940c8ff2fff05f0606ce9000e762af5}{S\+ET}}(port,  pin)~port $\vert$= (1$<$$<$pin)
-\begin{DoxyCompactList}\small\item\em Defines P\+O\+RT register and set pin/bit number to H\+I\+GH. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{main_8c_abb997ebe26f642ebbe6f82d48c1deff5}{C\+L\+E\+AR}}(port,  pin)~port \&= $\sim$(1$<$$<$pin)
-\begin{DoxyCompactList}\small\item\em Defines P\+O\+RT register and set pin/bit number to L\+OW. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{main_8c_a28b6db0a9f2cd8c50c66bdf94a76e9c2}{T\+O\+G\+G\+LE}}(port,  pin)~port $^\wedge$= (1$<$$<$pin)
-\begin{DoxyCompactList}\small\item\em Defines P\+O\+RT register and toggles the bit number. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{main_8c_a00cd49c71499ccba791ba610a02eb179}{R\+E\+AD}}(port,  pin)~(port \& (1$<$$<$pin))
-\begin{DoxyCompactList}\small\item\em Defines P\+I\+Nx register and read the pin value at respective bit number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\ttfamily \#include \char`\"{}char\+Menu.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
 \end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-unsigned char \mbox{\hyperlink{main_8c_a9dfc35a57991e438306be4d701167ba6}{sample\+Data}} \mbox{[}$\,$\mbox{]} = \{\textquotesingle{}B\textquotesingle{}, \textquotesingle{}a\textquotesingle{}, \textquotesingle{}s\textquotesingle{}, \textquotesingle{}i\textquotesingle{}, \textquotesingle{} \textquotesingle{}, \textquotesingle{}M\textquotesingle{}, \textquotesingle{}a\textquotesingle{}, \textquotesingle{}m\textquotesingle{}, \textquotesingle{}a\textquotesingle{}, \textquotesingle{}t\textquotesingle{}, \textquotesingle{}a\textquotesingle{}\}
-\end{DoxyCompactItemize}
 
 
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{main_8c_a2736882706f7e6ef0b1eaaf2babed615}\label{main_8c_a2736882706f7e6ef0b1eaaf2babed615}} 
-\index{main.c@{main.c}!BUTTON\_down@{BUTTON\_down}}
-\index{BUTTON\_down@{BUTTON\_down}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{BUTTON\_down}{BUTTON\_down}}
-{\footnotesize\ttfamily \#define B\+U\+T\+T\+O\+N\+\_\+down~3}
-
-\mbox{\Hypertarget{main_8c_a574aa1b882cec3e74d0a8e36c955839c}\label{main_8c_a574aa1b882cec3e74d0a8e36c955839c}} 
-\index{main.c@{main.c}!BUTTON\_enter@{BUTTON\_enter}}
-\index{BUTTON\_enter@{BUTTON\_enter}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{BUTTON\_enter}{BUTTON\_enter}}
-{\footnotesize\ttfamily \#define B\+U\+T\+T\+O\+N\+\_\+enter~4}
-
-\mbox{\Hypertarget{main_8c_af7db38fd9d8dce99372e49cdbe315b9b}\label{main_8c_af7db38fd9d8dce99372e49cdbe315b9b}} 
-\index{main.c@{main.c}!BUTTON\_up@{BUTTON\_up}}
-\index{BUTTON\_up@{BUTTON\_up}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{BUTTON\_up}{BUTTON\_up}}
-{\footnotesize\ttfamily \#define B\+U\+T\+T\+O\+N\+\_\+up~2}
-
-\mbox{\Hypertarget{main_8c_abb997ebe26f642ebbe6f82d48c1deff5}\label{main_8c_abb997ebe26f642ebbe6f82d48c1deff5}} 
-\index{main.c@{main.c}!CLEAR@{CLEAR}}
-\index{CLEAR@{CLEAR}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{CLEAR}{CLEAR}}
-{\footnotesize\ttfamily \#define C\+L\+E\+AR(\begin{DoxyParamCaption}\item[{}]{port,  }\item[{}]{pin }\end{DoxyParamCaption})~port \&= $\sim$(1$<$$<$pin)}
+\subsection{Detailed Description}
+\subsubsection*{Main function}
 
 
-
-Defines P\+O\+RT register and set pin/bit number to L\+OW. 
-
-\mbox{\Hypertarget{main_8c_aaa9ec3349b5aa48c04520f64980a3656}\label{main_8c_aaa9ec3349b5aa48c04520f64980a3656}} 
-\index{main.c@{main.c}!dirLEDs\_PORT@{dirLEDs\_PORT}}
-\index{dirLEDs\_PORT@{dirLEDs\_PORT}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{dirLEDs\_PORT}{dirLEDs\_PORT}}
-{\footnotesize\ttfamily \#define dir\+L\+E\+Ds\+\_\+\+P\+O\+RT~D\+D\+RC}
-
-\mbox{\Hypertarget{main_8c_ad775d2fd0becd9547c97bcd13ce40a5e}\label{main_8c_ad775d2fd0becd9547c97bcd13ce40a5e}} 
-\index{main.c@{main.c}!dirPUSHBUTTON\_PORT@{dirPUSHBUTTON\_PORT}}
-\index{dirPUSHBUTTON\_PORT@{dirPUSHBUTTON\_PORT}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{dirPUSHBUTTON\_PORT}{dirPUSHBUTTON\_PORT}}
-{\footnotesize\ttfamily \#define dir\+P\+U\+S\+H\+B\+U\+T\+T\+O\+N\+\_\+\+P\+O\+RT~D\+D\+RC}
-
-\mbox{\Hypertarget{main_8c_a65e9886d74aaee76545e83dd09011727}\label{main_8c_a65e9886d74aaee76545e83dd09011727}} 
-\index{main.c@{main.c}!false@{false}}
-\index{false@{false}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{false}{false}}
-{\footnotesize\ttfamily \#define false~0}
-
-\mbox{\Hypertarget{main_8c_a5bb885982ff66a2e0a0a45a8ee9c35e2}\label{main_8c_a5bb885982ff66a2e0a0a45a8ee9c35e2}} 
-\index{main.c@{main.c}!HIGH@{HIGH}}
-\index{HIGH@{HIGH}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{HIGH}{HIGH}}
-{\footnotesize\ttfamily \#define H\+I\+GH~1}
-
-\mbox{\Hypertarget{main_8c_a8e87752e53f833366370b733f25ce098}\label{main_8c_a8e87752e53f833366370b733f25ce098}} 
-\index{main.c@{main.c}!INPUT@{INPUT}}
-\index{INPUT@{INPUT}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{INPUT}{INPUT}}
-{\footnotesize\ttfamily \#define I\+N\+P\+UT(\begin{DoxyParamCaption}\item[{}]{port,  }\item[{}]{pin }\end{DoxyParamCaption})~port \&= $\sim$(1$<$$<$pin)}
-
-
-
-Defines D\+DR register and pin/bit number as an input. 
-
-\mbox{\Hypertarget{main_8c_a31e20330f8ce94e0dd10b005a15c5898}\label{main_8c_a31e20330f8ce94e0dd10b005a15c5898}} 
-\index{main.c@{main.c}!LED\_RED@{LED\_RED}}
-\index{LED\_RED@{LED\_RED}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{LED\_RED}{LED\_RED}}
-{\footnotesize\ttfamily \#define L\+E\+D\+\_\+\+R\+ED~6}
-
-\mbox{\Hypertarget{main_8c_a0998333b3a54bf7e3a466c41287853ba}\label{main_8c_a0998333b3a54bf7e3a466c41287853ba}} 
-\index{main.c@{main.c}!LED\_WHITE@{LED\_WHITE}}
-\index{LED\_WHITE@{LED\_WHITE}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{LED\_WHITE}{LED\_WHITE}}
-{\footnotesize\ttfamily \#define L\+E\+D\+\_\+\+W\+H\+I\+TE~5}
-
-\mbox{\Hypertarget{main_8c_a7e5e882ee0b8e6bfab6e8c00079168b2}\label{main_8c_a7e5e882ee0b8e6bfab6e8c00079168b2}} 
-\index{main.c@{main.c}!LEDs\_PORT@{LEDs\_PORT}}
-\index{LEDs\_PORT@{LEDs\_PORT}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{LEDs\_PORT}{LEDs\_PORT}}
-{\footnotesize\ttfamily \#define L\+E\+Ds\+\_\+\+P\+O\+RT~P\+O\+R\+TC}
-
-\mbox{\Hypertarget{main_8c_ab811d8c6ff3a505312d3276590444289}\label{main_8c_ab811d8c6ff3a505312d3276590444289}} 
-\index{main.c@{main.c}!LOW@{LOW}}
-\index{LOW@{LOW}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{LOW}{LOW}}
-{\footnotesize\ttfamily \#define L\+OW~0}
-
-\mbox{\Hypertarget{main_8c_acd77de37e90eeb183f24b8ec0187d6b4}\label{main_8c_acd77de37e90eeb183f24b8ec0187d6b4}} 
-\index{main.c@{main.c}!OUTPUT@{OUTPUT}}
-\index{OUTPUT@{OUTPUT}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{OUTPUT}{OUTPUT}}
-{\footnotesize\ttfamily \#define O\+U\+T\+P\+UT(\begin{DoxyParamCaption}\item[{}]{port,  }\item[{}]{pin }\end{DoxyParamCaption})~port $\vert$= (1$<$$<$pin)}
-
-
-
-Defines D\+DR register and pin/bit number as an output. 
-
-\mbox{\Hypertarget{main_8c_a27d67679b8d30620d698bf3617960bb5}\label{main_8c_a27d67679b8d30620d698bf3617960bb5}} 
-\index{main.c@{main.c}!PUSHBUTTON\_PORT@{PUSHBUTTON\_PORT}}
-\index{PUSHBUTTON\_PORT@{PUSHBUTTON\_PORT}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{PUSHBUTTON\_PORT}{PUSHBUTTON\_PORT}}
-{\footnotesize\ttfamily \#define P\+U\+S\+H\+B\+U\+T\+T\+O\+N\+\_\+\+P\+O\+RT~P\+O\+R\+TC}
-
-\mbox{\Hypertarget{main_8c_a00cd49c71499ccba791ba610a02eb179}\label{main_8c_a00cd49c71499ccba791ba610a02eb179}} 
-\index{main.c@{main.c}!READ@{READ}}
-\index{READ@{READ}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{READ}{READ}}
-{\footnotesize\ttfamily \#define R\+E\+AD(\begin{DoxyParamCaption}\item[{}]{port,  }\item[{}]{pin }\end{DoxyParamCaption})~(port \& (1$<$$<$pin))}
-
-
-
-Defines P\+I\+Nx register and read the pin value at respective bit number. 
-
-\mbox{\Hypertarget{main_8c_aea79a8b485030f3957b6f9383d6f3a56}\label{main_8c_aea79a8b485030f3957b6f9383d6f3a56}} 
-\index{main.c@{main.c}!readPUSHBUTTON@{readPUSHBUTTON}}
-\index{readPUSHBUTTON@{readPUSHBUTTON}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{readPUSHBUTTON}{readPUSHBUTTON}}
-{\footnotesize\ttfamily \#define read\+P\+U\+S\+H\+B\+U\+T\+T\+ON~P\+I\+NC}
-
-\mbox{\Hypertarget{main_8c_ae940c8ff2fff05f0606ce9000e762af5}\label{main_8c_ae940c8ff2fff05f0606ce9000e762af5}} 
-\index{main.c@{main.c}!SET@{SET}}
-\index{SET@{SET}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{SET}{SET}}
-{\footnotesize\ttfamily \#define S\+ET(\begin{DoxyParamCaption}\item[{}]{port,  }\item[{}]{pin }\end{DoxyParamCaption})~port $\vert$= (1$<$$<$pin)}
-
-
-
-Defines P\+O\+RT register and set pin/bit number to H\+I\+GH. 
-
-\mbox{\Hypertarget{main_8c_a28b6db0a9f2cd8c50c66bdf94a76e9c2}\label{main_8c_a28b6db0a9f2cd8c50c66bdf94a76e9c2}} 
-\index{main.c@{main.c}!TOGGLE@{TOGGLE}}
-\index{TOGGLE@{TOGGLE}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{TOGGLE}{TOGGLE}}
-{\footnotesize\ttfamily \#define T\+O\+G\+G\+LE(\begin{DoxyParamCaption}\item[{}]{port,  }\item[{}]{pin }\end{DoxyParamCaption})~port $^\wedge$= (1$<$$<$pin)}
-
-
-
-Defines P\+O\+RT register and toggles the bit number. 
-
-\mbox{\Hypertarget{main_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}\label{main_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}} 
-\index{main.c@{main.c}!true@{true}}
-\index{true@{true}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{true}{true}}
-{\footnotesize\ttfamily \#define true~1}
-
-
+\begin{DoxyItemize}
+\item Declare and initialize needed software variables
+\begin{DoxyItemize}
+\item button\+Pressed\+\_\+delay, button\+Released\+\_\+delay are used for push button debouncing
+\item update\+\_\+menu controls menu to be updated only when changes are supposed (button pressed, etc)
+\item initialize menu item selector
+\end{DoxyItemize}
+\item M\+CU\textquotesingle{}s ports and pins definitions and initializations
+\item U\+S\+A\+RT Initialization
+\item Intro screen (just for fun ;) and a bit for some debuging purposes)
+\item Infinite loop
+\begin{DoxyItemize}
+\item Show menu. Since this is slow process call this function only when the menu is to be updated (e.\+g. button is pressed)
+\item Check buttons and act respectively. Consider debouncing delays. 
+\end{DoxyItemize}
+\end{DoxyItemize}
 
 \subsection{Function Documentation}
 \mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
@@ -214,12 +42,37 @@ Defines P\+O\+RT register and toggles the bit number.
 \subsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+\subsubsection*{M\+C\+Us ports initializations}
 
 
-\subsection{Variable Documentation}
-\mbox{\Hypertarget{main_8c_a9dfc35a57991e438306be4d701167ba6}\label{main_8c_a9dfc35a57991e438306be4d701167ba6}} 
-\index{main.c@{main.c}!sampleData@{sampleData}}
-\index{sampleData@{sampleData}!main.c@{main.c}}
-\subsubsection{\texorpdfstring{sampleData}{sampleData}}
-{\footnotesize\ttfamily unsigned char sample\+Data\mbox{[}$\,$\mbox{]} = \{\textquotesingle{}B\textquotesingle{}, \textquotesingle{}a\textquotesingle{}, \textquotesingle{}s\textquotesingle{}, \textquotesingle{}i\textquotesingle{}, \textquotesingle{} \textquotesingle{}, \textquotesingle{}M\textquotesingle{}, \textquotesingle{}a\textquotesingle{}, \textquotesingle{}m\textquotesingle{}, \textquotesingle{}a\textquotesingle{}, \textquotesingle{}t\textquotesingle{}, \textquotesingle{}a\textquotesingle{}\}}
+\begin{DoxyItemize}
+\item O\+U\+T\+P\+UT sets a particular pin as an output in the corresponding D\+DR register
+\item I\+N\+P\+UT sets a particular pin as an input in the corresponding D\+DR register
+\item C\+L\+E\+AR sets a particular output pin to L\+OW
+\item S\+ET sets a particular output pin to H\+I\+GH
+\item T\+O\+G\+G\+LE changes the state of the selected otput pin
+\end{DoxyItemize}
 
+\subsubsection*{U\+S\+A\+RT Initialization in asynchronous mode}
+
+
+\begin{DoxyItemize}
+\item set the baud
+\item set the data framer (8bits, 1 stop bit, no parity)
+\item enable U\+A\+RT
+\end{DoxyItemize}
+
+\subsubsection*{Intro Screen}
+
+
+\begin{DoxyItemize}
+\item clear screen
+\item after 2 sec delay put an intro screen
+\end{DoxyItemize}
+
+\subsubsection*{Infinite loop}
+
+
+\begin{DoxyItemize}
+\item Browse the menu respectively
+\end{DoxyItemize}

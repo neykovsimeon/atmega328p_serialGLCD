@@ -37,6 +37,7 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../charMenu.c \
 ../main.c \
 ../serialGLCD.c \
 ../USART.c
@@ -49,21 +50,25 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+charMenu.o \
 main.o \
 serialGLCD.o \
 USART.o
 
 OBJS_AS_ARGS +=  \
+charMenu.o \
 main.o \
 serialGLCD.o \
 USART.o
 
 C_DEPS +=  \
+charMenu.d \
 main.d \
 serialGLCD.d \
 USART.d
 
 C_DEPS_AS_ARGS +=  \
+charMenu.d \
 main.d \
 serialGLCD.d \
 USART.d
@@ -82,6 +87,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

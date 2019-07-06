@@ -1,9 +1,26 @@
-\hypertarget{main_8h}{}\section{D\+:/\+Projects/serial\+G\+L\+C\+D128x64\+\_\+avr/serial\+G\+L\+C\+D/serial\+G\+L\+C\+D/main.h File Reference}
-\label{main_8h}\index{D:/Projects/serialGLCD128x64\_avr/serialGLCD/serialGLCD/main.h@{D:/Projects/serialGLCD128x64\_avr/serialGLCD/serialGLCD/main.h}}
+\hypertarget{main_8h}{}\section{main.\+h File Reference}
+\label{main_8h}\index{main.h@{main.h}}
 \subsection*{Macros}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{T\+R\+UE}}~1
+\item 
+\#define \mbox{\hyperlink{main_8h_aa93f0eb578d23995850d61f7d61c55c1}{F\+A\+L\+SE}}~0
+\item 
+\#define \mbox{\hyperlink{main_8h_ab811d8c6ff3a505312d3276590444289}{L\+OW}}~0
+\item 
+\#define \mbox{\hyperlink{main_8h_a5bb885982ff66a2e0a0a45a8ee9c35e2}{H\+I\+GH}}~1
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{main_8h_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+C\+PU}}~16000000\+UL
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{main_8h_aa53d8bf7f916e9570c0a5ba143c46425}{U\+A\+R\+T\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+S\+P\+E\+ED}}~1
 \item 
@@ -20,19 +37,184 @@
 \#define \mbox{\hyperlink{main_8h_a6e39c5c443322398878f10e0f1e6f023}{N\+O\+\_\+\+P\+A\+R\+I\+TY}}~3
 \end{DoxyCompactItemize}
 
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8h_a8ceb08f420b4587ebfa50f5203c036bb}{G\+L\+C\+D\+\_\+\+D\+E\+L\+AY}}~5
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8h_aaa9ec3349b5aa48c04520f64980a3656}{dir\+L\+E\+Ds\+\_\+\+P\+O\+RT}}~D\+D\+RC
+\item 
+\#define \mbox{\hyperlink{main_8h_a7e5e882ee0b8e6bfab6e8c00079168b2}{L\+E\+Ds\+\_\+\+P\+O\+RT}}~P\+O\+R\+TC
+\item 
+\#define \mbox{\hyperlink{main_8h_a31e20330f8ce94e0dd10b005a15c5898}{L\+E\+D\+\_\+\+R\+ED}}~5
+\item 
+\#define \mbox{\hyperlink{main_8h_ad775d2fd0becd9547c97bcd13ce40a5e}{dir\+P\+U\+S\+H\+B\+U\+T\+T\+O\+N\+\_\+\+P\+O\+RT}}~D\+D\+RC
+\item 
+\#define \mbox{\hyperlink{main_8h_a27d67679b8d30620d698bf3617960bb5}{P\+U\+S\+H\+B\+U\+T\+T\+O\+N\+\_\+\+P\+O\+RT}}~P\+O\+R\+TC
+\item 
+\#define \mbox{\hyperlink{main_8h_aea79a8b485030f3957b6f9383d6f3a56}{read\+P\+U\+S\+H\+B\+U\+T\+T\+ON}}~P\+I\+NC
+\item 
+\#define \mbox{\hyperlink{main_8h_a574aa1b882cec3e74d0a8e36c955839c}{B\+U\+T\+T\+O\+N\+\_\+enter}}~4
+\item 
+\#define \mbox{\hyperlink{main_8h_a2736882706f7e6ef0b1eaaf2babed615}{B\+U\+T\+T\+O\+N\+\_\+down}}~3
+\item 
+\#define \mbox{\hyperlink{main_8h_af7db38fd9d8dce99372e49cdbe315b9b}{B\+U\+T\+T\+O\+N\+\_\+up}}~2
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8h_a8e87752e53f833366370b733f25ce098}{I\+N\+P\+UT}}(port,  pin)~port \&= $\sim$(1$<$$<$pin)
+\begin{DoxyCompactList}\small\item\em Defines D\+DR register and pin/bit number as an input. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{main_8h_acd77de37e90eeb183f24b8ec0187d6b4}{O\+U\+T\+P\+UT}}(port,  pin)~port $\vert$= (1$<$$<$pin)
+\begin{DoxyCompactList}\small\item\em Defines D\+DR register and pin/bit number as an output. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{main_8h_ae940c8ff2fff05f0606ce9000e762af5}{S\+ET}}(port,  pin)~port $\vert$= (1$<$$<$pin)
+\begin{DoxyCompactList}\small\item\em Defines P\+O\+RT register and set pin/bit number to H\+I\+GH. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{main_8h_abb997ebe26f642ebbe6f82d48c1deff5}{C\+L\+E\+AR}}(port,  pin)~port \&= $\sim$(1$<$$<$pin)
+\begin{DoxyCompactList}\small\item\em Defines P\+O\+RT register and set pin/bit number to L\+OW. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{main_8h_a28b6db0a9f2cd8c50c66bdf94a76e9c2}{T\+O\+G\+G\+LE}}(port,  pin)~port $^\wedge$= (1$<$$<$pin)
+\begin{DoxyCompactList}\small\item\em Defines P\+O\+RT register and toggles the bit number. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{main_8h_a00cd49c71499ccba791ba610a02eb179}{R\+E\+AD}}(port,  pin)~(port \& (1$<$$<$pin))
+\begin{DoxyCompactList}\small\item\em Defines P\+I\+Nx register and read the pin value at respective bit number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
 
 \subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{main_8h_a43bafb28b29491ec7f871319b5a3b2f8}\label{main_8h_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\mbox{\Hypertarget{main_8h_a2736882706f7e6ef0b1eaaf2babed615}\label{main_8h_a2736882706f7e6ef0b1eaaf2babed615}} 
+\index{main.h@{main.h}!BUTTON\_down@{BUTTON\_down}}
+\index{BUTTON\_down@{BUTTON\_down}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{BUTTON\_down}{BUTTON\_down}}
+{\footnotesize\ttfamily \#define B\+U\+T\+T\+O\+N\+\_\+down~3}
+
+Application specific names defined for M\+CU\textquotesingle{}s ports and pins \mbox{\Hypertarget{main_8h_a574aa1b882cec3e74d0a8e36c955839c}\label{main_8h_a574aa1b882cec3e74d0a8e36c955839c}} 
+\index{main.h@{main.h}!BUTTON\_enter@{BUTTON\_enter}}
+\index{BUTTON\_enter@{BUTTON\_enter}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{BUTTON\_enter}{BUTTON\_enter}}
+{\footnotesize\ttfamily \#define B\+U\+T\+T\+O\+N\+\_\+enter~4}
+
+Application specific names defined for M\+CU\textquotesingle{}s ports and pins \mbox{\Hypertarget{main_8h_af7db38fd9d8dce99372e49cdbe315b9b}\label{main_8h_af7db38fd9d8dce99372e49cdbe315b9b}} 
+\index{main.h@{main.h}!BUTTON\_up@{BUTTON\_up}}
+\index{BUTTON\_up@{BUTTON\_up}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{BUTTON\_up}{BUTTON\_up}}
+{\footnotesize\ttfamily \#define B\+U\+T\+T\+O\+N\+\_\+up~2}
+
+Application specific names defined for M\+CU\textquotesingle{}s ports and pins \mbox{\Hypertarget{main_8h_abb997ebe26f642ebbe6f82d48c1deff5}\label{main_8h_abb997ebe26f642ebbe6f82d48c1deff5}} 
+\index{main.h@{main.h}!CLEAR@{CLEAR}}
+\index{CLEAR@{CLEAR}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{CLEAR}{CLEAR}}
+{\footnotesize\ttfamily \#define C\+L\+E\+AR(\begin{DoxyParamCaption}\item[{}]{port,  }\item[{}]{pin }\end{DoxyParamCaption})~port \&= $\sim$(1$<$$<$pin)}
+
+
+
+Defines P\+O\+RT register and set pin/bit number to L\+OW. 
+
+\mbox{\Hypertarget{main_8h_aaa9ec3349b5aa48c04520f64980a3656}\label{main_8h_aaa9ec3349b5aa48c04520f64980a3656}} 
+\index{main.h@{main.h}!dirLEDs\_PORT@{dirLEDs\_PORT}}
+\index{dirLEDs\_PORT@{dirLEDs\_PORT}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{dirLEDs\_PORT}{dirLEDs\_PORT}}
+{\footnotesize\ttfamily \#define dir\+L\+E\+Ds\+\_\+\+P\+O\+RT~D\+D\+RC}
+
+Application specific names defined for M\+CU\textquotesingle{}s ports and pins \mbox{\Hypertarget{main_8h_ad775d2fd0becd9547c97bcd13ce40a5e}\label{main_8h_ad775d2fd0becd9547c97bcd13ce40a5e}} 
+\index{main.h@{main.h}!dirPUSHBUTTON\_PORT@{dirPUSHBUTTON\_PORT}}
+\index{dirPUSHBUTTON\_PORT@{dirPUSHBUTTON\_PORT}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{dirPUSHBUTTON\_PORT}{dirPUSHBUTTON\_PORT}}
+{\footnotesize\ttfamily \#define dir\+P\+U\+S\+H\+B\+U\+T\+T\+O\+N\+\_\+\+P\+O\+RT~D\+D\+RC}
+
+Application specific names defined for M\+CU\textquotesingle{}s ports and pins \mbox{\Hypertarget{main_8h_a43bafb28b29491ec7f871319b5a3b2f8}\label{main_8h_a43bafb28b29491ec7f871319b5a3b2f8}} 
 \index{main.h@{main.h}!F\_CPU@{F\_CPU}}
 \index{F\_CPU@{F\_CPU}!main.h@{main.h}}
 \subsubsection{\texorpdfstring{F\_CPU}{F\_CPU}}
 {\footnotesize\ttfamily \#define F\+\_\+\+C\+PU~16000000\+UL}
 
+System clock, used in $<$util/delay.\+h$>$ \mbox{\Hypertarget{main_8h_aa93f0eb578d23995850d61f7d61c55c1}\label{main_8h_aa93f0eb578d23995850d61f7d61c55c1}} 
+\index{main.h@{main.h}!FALSE@{FALSE}}
+\index{FALSE@{FALSE}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{FALSE}{FALSE}}
+{\footnotesize\ttfamily \#define F\+A\+L\+SE~0}
+
+\mbox{\hyperlink{main_8h}{main.\+h}}
+
+\begin{DoxyDate}{Date}
+30.\+6.\+2019 г. 18\+:44\+:02 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Simeon n\+E\+Y\+K\+O\+V\+General purpose macro definitions 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{main_8h_a8ceb08f420b4587ebfa50f5203c036bb}\label{main_8h_a8ceb08f420b4587ebfa50f5203c036bb}} 
+\index{main.h@{main.h}!GLCD\_DELAY@{GLCD\_DELAY}}
+\index{GLCD\_DELAY@{GLCD\_DELAY}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{GLCD\_DELAY}{GLCD\_DELAY}}
+{\footnotesize\ttfamily \#define G\+L\+C\+D\+\_\+\+D\+E\+L\+AY~5}
+
+Added delay needed serial L\+CD to do its stuffs \mbox{\Hypertarget{main_8h_a5bb885982ff66a2e0a0a45a8ee9c35e2}\label{main_8h_a5bb885982ff66a2e0a0a45a8ee9c35e2}} 
+\index{main.h@{main.h}!HIGH@{HIGH}}
+\index{HIGH@{HIGH}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{HIGH}{HIGH}}
+{\footnotesize\ttfamily \#define H\+I\+GH~1}
+
+\mbox{\hyperlink{main_8h}{main.\+h}}
+
+\begin{DoxyDate}{Date}
+30.\+6.\+2019 г. 18\+:44\+:02 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Simeon n\+E\+Y\+K\+O\+V\+General purpose macro definitions 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{main_8h_a8e87752e53f833366370b733f25ce098}\label{main_8h_a8e87752e53f833366370b733f25ce098}} 
+\index{main.h@{main.h}!INPUT@{INPUT}}
+\index{INPUT@{INPUT}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{INPUT}{INPUT}}
+{\footnotesize\ttfamily \#define I\+N\+P\+UT(\begin{DoxyParamCaption}\item[{}]{port,  }\item[{}]{pin }\end{DoxyParamCaption})~port \&= $\sim$(1$<$$<$pin)}
+
+
+
+Defines D\+DR register and pin/bit number as an input. 
+
+A\+VR M\+CU\textquotesingle{}s ports and pins M\+A\+C\+RO definitions \mbox{\Hypertarget{main_8h_a31e20330f8ce94e0dd10b005a15c5898}\label{main_8h_a31e20330f8ce94e0dd10b005a15c5898}} 
+\index{main.h@{main.h}!LED\_RED@{LED\_RED}}
+\index{LED\_RED@{LED\_RED}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LED\_RED}{LED\_RED}}
+{\footnotesize\ttfamily \#define L\+E\+D\+\_\+\+R\+ED~5}
+
+Application specific names defined for M\+CU\textquotesingle{}s ports and pins \mbox{\Hypertarget{main_8h_a7e5e882ee0b8e6bfab6e8c00079168b2}\label{main_8h_a7e5e882ee0b8e6bfab6e8c00079168b2}} 
+\index{main.h@{main.h}!LEDs\_PORT@{LEDs\_PORT}}
+\index{LEDs\_PORT@{LEDs\_PORT}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LEDs\_PORT}{LEDs\_PORT}}
+{\footnotesize\ttfamily \#define L\+E\+Ds\+\_\+\+P\+O\+RT~P\+O\+R\+TC}
+
+Application specific names defined for M\+CU\textquotesingle{}s ports and pins \mbox{\Hypertarget{main_8h_ab811d8c6ff3a505312d3276590444289}\label{main_8h_ab811d8c6ff3a505312d3276590444289}} 
+\index{main.h@{main.h}!LOW@{LOW}}
+\index{LOW@{LOW}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LOW}{LOW}}
+{\footnotesize\ttfamily \#define L\+OW~0}
+
+\mbox{\hyperlink{main_8h}{main.\+h}}
+
+\begin{DoxyDate}{Date}
+30.\+6.\+2019 г. 18\+:44\+:02 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Simeon n\+E\+Y\+K\+O\+V\+General purpose macro definitions 
+\end{DoxyAuthor}
 \mbox{\Hypertarget{main_8h_a6e39c5c443322398878f10e0f1e6f023}\label{main_8h_a6e39c5c443322398878f10e0f1e6f023}} 
 \index{main.h@{main.h}!NO\_PARITY@{NO\_PARITY}}
 \index{NO\_PARITY@{NO\_PARITY}!main.h@{main.h}}
 \subsubsection{\texorpdfstring{NO\_PARITY}{NO\_PARITY}}
 {\footnotesize\ttfamily \#define N\+O\+\_\+\+P\+A\+R\+I\+TY~3}
+
+U\+A\+RT system settings\+: start, stop bits, parity, data length, baud (scalled x100) \mbox{\Hypertarget{main_8h_acd77de37e90eeb183f24b8ec0187d6b4}\label{main_8h_acd77de37e90eeb183f24b8ec0187d6b4}} 
+\index{main.h@{main.h}!OUTPUT@{OUTPUT}}
+\index{OUTPUT@{OUTPUT}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{OUTPUT}{OUTPUT}}
+{\footnotesize\ttfamily \#define O\+U\+T\+P\+UT(\begin{DoxyParamCaption}\item[{}]{port,  }\item[{}]{pin }\end{DoxyParamCaption})~port $\vert$= (1$<$$<$pin)}
+
+
+
+Defines D\+DR register and pin/bit number as an output. 
 
 \mbox{\Hypertarget{main_8h_a64de75e13d62a653f2a2b5c41e0374c2}\label{main_8h_a64de75e13d62a653f2a2b5c41e0374c2}} 
 \index{main.h@{main.h}!PARITY\_EVEN@{PARITY\_EVEN}}
@@ -40,33 +222,90 @@
 \subsubsection{\texorpdfstring{PARITY\_EVEN}{PARITY\_EVEN}}
 {\footnotesize\ttfamily \#define P\+A\+R\+I\+T\+Y\+\_\+\+E\+V\+EN~0}
 
-\mbox{\Hypertarget{main_8h_a25e17ce6ba7124885e170c47bcd833e5}\label{main_8h_a25e17ce6ba7124885e170c47bcd833e5}} 
+U\+A\+RT system settings\+: start, stop bits, parity, data length, baud (scalled x100) \mbox{\Hypertarget{main_8h_a25e17ce6ba7124885e170c47bcd833e5}\label{main_8h_a25e17ce6ba7124885e170c47bcd833e5}} 
 \index{main.h@{main.h}!PARITY\_ODD@{PARITY\_ODD}}
 \index{PARITY\_ODD@{PARITY\_ODD}!main.h@{main.h}}
 \subsubsection{\texorpdfstring{PARITY\_ODD}{PARITY\_ODD}}
 {\footnotesize\ttfamily \#define P\+A\+R\+I\+T\+Y\+\_\+\+O\+DD~1}
 
+U\+A\+RT system settings\+: start, stop bits, parity, data length, baud (scalled x100) \mbox{\Hypertarget{main_8h_a27d67679b8d30620d698bf3617960bb5}\label{main_8h_a27d67679b8d30620d698bf3617960bb5}} 
+\index{main.h@{main.h}!PUSHBUTTON\_PORT@{PUSHBUTTON\_PORT}}
+\index{PUSHBUTTON\_PORT@{PUSHBUTTON\_PORT}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{PUSHBUTTON\_PORT}{PUSHBUTTON\_PORT}}
+{\footnotesize\ttfamily \#define P\+U\+S\+H\+B\+U\+T\+T\+O\+N\+\_\+\+P\+O\+RT~P\+O\+R\+TC}
+
+Application specific names defined for M\+CU\textquotesingle{}s ports and pins \mbox{\Hypertarget{main_8h_a00cd49c71499ccba791ba610a02eb179}\label{main_8h_a00cd49c71499ccba791ba610a02eb179}} 
+\index{main.h@{main.h}!READ@{READ}}
+\index{READ@{READ}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{READ}{READ}}
+{\footnotesize\ttfamily \#define R\+E\+AD(\begin{DoxyParamCaption}\item[{}]{port,  }\item[{}]{pin }\end{DoxyParamCaption})~(port \& (1$<$$<$pin))}
+
+
+
+Defines P\+I\+Nx register and read the pin value at respective bit number. 
+
+\mbox{\Hypertarget{main_8h_aea79a8b485030f3957b6f9383d6f3a56}\label{main_8h_aea79a8b485030f3957b6f9383d6f3a56}} 
+\index{main.h@{main.h}!readPUSHBUTTON@{readPUSHBUTTON}}
+\index{readPUSHBUTTON@{readPUSHBUTTON}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{readPUSHBUTTON}{readPUSHBUTTON}}
+{\footnotesize\ttfamily \#define read\+P\+U\+S\+H\+B\+U\+T\+T\+ON~P\+I\+NC}
+
+Application specific names defined for M\+CU\textquotesingle{}s ports and pins \mbox{\Hypertarget{main_8h_ae940c8ff2fff05f0606ce9000e762af5}\label{main_8h_ae940c8ff2fff05f0606ce9000e762af5}} 
+\index{main.h@{main.h}!SET@{SET}}
+\index{SET@{SET}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{SET}{SET}}
+{\footnotesize\ttfamily \#define S\+ET(\begin{DoxyParamCaption}\item[{}]{port,  }\item[{}]{pin }\end{DoxyParamCaption})~port $\vert$= (1$<$$<$pin)}
+
+
+
+Defines P\+O\+RT register and set pin/bit number to H\+I\+GH. 
+
+\mbox{\Hypertarget{main_8h_a28b6db0a9f2cd8c50c66bdf94a76e9c2}\label{main_8h_a28b6db0a9f2cd8c50c66bdf94a76e9c2}} 
+\index{main.h@{main.h}!TOGGLE@{TOGGLE}}
+\index{TOGGLE@{TOGGLE}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{TOGGLE}{TOGGLE}}
+{\footnotesize\ttfamily \#define T\+O\+G\+G\+LE(\begin{DoxyParamCaption}\item[{}]{port,  }\item[{}]{pin }\end{DoxyParamCaption})~port $^\wedge$= (1$<$$<$pin)}
+
+
+
+Defines P\+O\+RT register and toggles the bit number. 
+
+\mbox{\Hypertarget{main_8h_aa8cecfc5c5c054d2875c03e77b7be15d}\label{main_8h_aa8cecfc5c5c054d2875c03e77b7be15d}} 
+\index{main.h@{main.h}!TRUE@{TRUE}}
+\index{TRUE@{TRUE}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{TRUE}{TRUE}}
+{\footnotesize\ttfamily \#define T\+R\+UE~1}
+
+\mbox{\hyperlink{main_8h}{main.\+h}}
+
+\begin{DoxyDate}{Date}
+30.\+6.\+2019 г. 18\+:44\+:02 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Simeon n\+E\+Y\+K\+O\+V\+General purpose macro definitions 
+\end{DoxyAuthor}
 \mbox{\Hypertarget{main_8h_a1fac9153314479ad0ad495d752f0224a}\label{main_8h_a1fac9153314479ad0ad495d752f0224a}} 
 \index{main.h@{main.h}!UART\_BAUD@{UART\_BAUD}}
 \index{UART\_BAUD@{UART\_BAUD}!main.h@{main.h}}
 \subsubsection{\texorpdfstring{UART\_BAUD}{UART\_BAUD}}
 {\footnotesize\ttfamily \#define U\+A\+R\+T\+\_\+\+B\+A\+UD~1152}
 
-\mbox{\Hypertarget{main_8h_aab5d0b4c86f364b180819721b3ebbea3}\label{main_8h_aab5d0b4c86f364b180819721b3ebbea3}} 
+U\+A\+RT system settings\+: start, stop bits, parity, data length, baud (scalled x100) \mbox{\Hypertarget{main_8h_aab5d0b4c86f364b180819721b3ebbea3}\label{main_8h_aab5d0b4c86f364b180819721b3ebbea3}} 
 \index{main.h@{main.h}!UART\_DATA\_LENGTH@{UART\_DATA\_LENGTH}}
 \index{UART\_DATA\_LENGTH@{UART\_DATA\_LENGTH}!main.h@{main.h}}
 \subsubsection{\texorpdfstring{UART\_DATA\_LENGTH}{UART\_DATA\_LENGTH}}
 {\footnotesize\ttfamily \#define U\+A\+R\+T\+\_\+\+D\+A\+T\+A\+\_\+\+L\+E\+N\+G\+TH~8}
 
-\mbox{\Hypertarget{main_8h_aa53d8bf7f916e9570c0a5ba143c46425}\label{main_8h_aa53d8bf7f916e9570c0a5ba143c46425}} 
+U\+A\+RT system settings\+: start, stop bits, parity, data length, baud (scalled x100) \mbox{\Hypertarget{main_8h_aa53d8bf7f916e9570c0a5ba143c46425}\label{main_8h_aa53d8bf7f916e9570c0a5ba143c46425}} 
 \index{main.h@{main.h}!UART\_DOUBLE\_SPEED@{UART\_DOUBLE\_SPEED}}
 \index{UART\_DOUBLE\_SPEED@{UART\_DOUBLE\_SPEED}!main.h@{main.h}}
 \subsubsection{\texorpdfstring{UART\_DOUBLE\_SPEED}{UART\_DOUBLE\_SPEED}}
 {\footnotesize\ttfamily \#define U\+A\+R\+T\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+S\+P\+E\+ED~1}
 
-\mbox{\Hypertarget{main_8h_a5a50a502408c7bea025124b526ca381c}\label{main_8h_a5a50a502408c7bea025124b526ca381c}} 
+U\+A\+RT system settings\+: start, stop bits, parity, data length, baud (scalled x100) \mbox{\Hypertarget{main_8h_a5a50a502408c7bea025124b526ca381c}\label{main_8h_a5a50a502408c7bea025124b526ca381c}} 
 \index{main.h@{main.h}!UART\_STOP\_BITS@{UART\_STOP\_BITS}}
 \index{UART\_STOP\_BITS@{UART\_STOP\_BITS}!main.h@{main.h}}
 \subsubsection{\texorpdfstring{UART\_STOP\_BITS}{UART\_STOP\_BITS}}
 {\footnotesize\ttfamily \#define U\+A\+R\+T\+\_\+\+S\+T\+O\+P\+\_\+\+B\+I\+TS~1}
 
+U\+A\+RT system settings\+: start, stop bits, parity, data length, baud (scalled x100) 

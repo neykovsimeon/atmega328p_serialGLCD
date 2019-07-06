@@ -1,12 +1,12 @@
-\hypertarget{_u_s_a_r_t_8h}{}\section{D\+:/\+Projects/serial\+G\+L\+C\+D128x64\+\_\+avr/serial\+G\+L\+C\+D/serial\+G\+L\+C\+D/\+U\+S\+A\+RT.h File Reference}
-\label{_u_s_a_r_t_8h}\index{D:/Projects/serialGLCD128x64\_avr/serialGLCD/serialGLCD/USART.h@{D:/Projects/serialGLCD128x64\_avr/serialGLCD/serialGLCD/USART.h}}
+\hypertarget{_u_s_a_r_t_8h}{}\section{U\+S\+A\+R\+T.\+h File Reference}
+\label{_u_s_a_r_t_8h}\index{USART.h@{USART.h}}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{_u_s_a_r_t_8h_a601f1629a188125c839ce6aa79e61d5c}{U\+A\+R\+T0\+\_\+\+Init}} (int baud, char Async\+Double\+Speed, char data\+Length, char Parity)
 \begin{DoxyCompactList}\small\item\em Utilize U\+S\+A\+RT communication. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{_u_s_a_r_t_8h_a59111d7ad26b19ab1d4b7b09197f79ae}{wait\+\_\+while\+\_\+\+U\+A\+R\+T0\+\_\+is\+\_\+busy}} ()
-\begin{DoxyCompactList}\small\item\em Wait if U\+S\+A\+RT is busy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{_u_s_a_r_t_8h_a82f73df3b03f2e6d0fe5d531f22b818a}{wait\+\_\+while\+\_\+\+U\+A\+R\+T0\+\_\+is\+\_\+busy}} (unsigned char add\+\_\+delay)
+\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -22,14 +22,16 @@ Utilize U\+S\+A\+RT communication.
 
 \mbox{\hyperlink{_u_s_a_r_t_8h}{U\+S\+A\+R\+T.\+h}}
 
-Created\+: 30.\+6.\+2019 г. 17\+:16\+:22 Author\+: Simeon Neykov \mbox{\Hypertarget{_u_s_a_r_t_8h_a59111d7ad26b19ab1d4b7b09197f79ae}\label{_u_s_a_r_t_8h_a59111d7ad26b19ab1d4b7b09197f79ae}} 
+Created\+: 30.\+6.\+2019 г. 17\+:16\+:22 Author\+: Simeon Neykov \mbox{\Hypertarget{_u_s_a_r_t_8h_a82f73df3b03f2e6d0fe5d531f22b818a}\label{_u_s_a_r_t_8h_a82f73df3b03f2e6d0fe5d531f22b818a}} 
 \index{USART.h@{USART.h}!wait\_while\_UART0\_is\_busy@{wait\_while\_UART0\_is\_busy}}
 \index{wait\_while\_UART0\_is\_busy@{wait\_while\_UART0\_is\_busy}!USART.h@{USART.h}}
 \subsubsection{\texorpdfstring{wait\_while\_UART0\_is\_busy()}{wait\_while\_UART0\_is\_busy()}}
-{\footnotesize\ttfamily void wait\+\_\+while\+\_\+\+U\+A\+R\+T0\+\_\+is\+\_\+busy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void wait\+\_\+while\+\_\+\+U\+A\+R\+T0\+\_\+is\+\_\+busy (\begin{DoxyParamCaption}\item[{unsigned char}]{add\+\_\+delay }\end{DoxyParamCaption})}
 
-
-
-Wait if U\+S\+A\+RT is busy. 
+\subsubsection*{Wait if U\+S\+A\+RT is busy}
 
 This function checks and wait until U\+S\+A\+RT has finished previous transmission. One should use this each time before loading the transmit buffer U\+D\+Rn with new data. 
+\begin{DoxyParams}{Parameters}
+{\em add\+\_\+delay} & One may consider an additional delay depends of the receiver needs (e.\+g. serial graphic L\+CD) \\
+\hline
+\end{DoxyParams}

@@ -1,21 +1,26 @@
-﻿/** \brief Utilize USART communication with atmega328p
+﻿/** \page pageUSART MCU's USART
  * 
+ * ##Utilize USART communication with atmega328p 
+ *
  * USART.c
  *
- * \date	Created: 30.6.2019 г. 17:06:22
- * \author: Simeon Neykov
+ * \author	Simeon Neykov.
  *
  */ 
 
 #include <avr/io.h>
 #include <math.h>
 #include "main.h"
+#include <util/delay.h>
 
-/** \brief 
- * 
- * UART Initialization for Asynchronous serial communication.
+/** ##UART Initialization for Asynchronous serial communication. 
  * 
  * UART specifications (baud rate, data length , parity, stop).
+ *
+ * Some values are predefined in main.h for GLCD with backpack specifically:
+ * - baud rate 115200, use double speed prescaller
+ * - 8bits, no parity
+ * - F_CPU
  *
  * - Setting the baud rate
  *	- K is used to take the effect on the prescaller UBRR when double speed is considered
@@ -60,13 +65,15 @@ void UART0_Init (uint16_t baud, char AsyncDoubleSpeed, char dataLength, char Par
 }
 
 
-/** \brief Wait if USART is busy
+/** ##Wait if USART is busy
  * 
  * This function checks and wait until USART has finished previous transmission.
  * One should use this each time before loading the transmit buffer UDRn with new data.
+ * @param add_delay One may consider an additional delay depends of the receiver needs (e.g. serial graphic LCD)
  *
  */
-void wait_while_UART0_is_busy()
+void wait_while_UART0_is_busy(unsigned char add_delay)
 {
 	while (!(UCSR0A & (1 << UDRE0))); // check if the transmitter is busy
+	if (add_delay) _delay_ms(GLCD_DELAY);
 }

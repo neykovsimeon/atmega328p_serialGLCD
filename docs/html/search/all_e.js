@@ -1,10 +1,23 @@
 var searchData=
 [
-  ['uart0_5finit',['UART0_Init',['../d0/d93/_u_s_a_r_t_8c.html#a17613ca61f75959783e93e51d3d5b3d3',1,'UART0_Init(uint16_t baud, char AsyncDoubleSpeed, char dataLength, char Parity, char stopbits):&#160;USART.c'],['../db/da5/_u_s_a_r_t_8h.html#a601f1629a188125c839ce6aa79e61d5c',1,'UART0_Init(int baud, char AsyncDoubleSpeed, char dataLength, char Parity):&#160;USART.h']]],
-  ['uart_5fbaud',['UART_BAUD',['../d4/dbf/main_8h.html#a1fac9153314479ad0ad495d752f0224a',1,'main.h']]],
-  ['uart_5fdata_5flength',['UART_DATA_LENGTH',['../d4/dbf/main_8h.html#aab5d0b4c86f364b180819721b3ebbea3',1,'main.h']]],
-  ['uart_5fdouble_5fspeed',['UART_DOUBLE_SPEED',['../d4/dbf/main_8h.html#aa53d8bf7f916e9570c0a5ba143c46425',1,'main.h']]],
-  ['uart_5fstop_5fbits',['UART_STOP_BITS',['../d4/dbf/main_8h.html#a5a50a502408c7bea025124b526ca381c',1,'main.h']]],
-  ['usart_2ec',['USART.c',['../d0/d93/_u_s_a_r_t_8c.html',1,'']]],
-  ['usart_2eh',['USART.h',['../db/da5/_u_s_a_r_t_8h.html',1,'']]]
+  ['serial_20glcd_20adm12864h',['Serial GLCD ADM12864H',['../db/dc5/page_l_c_d.html',1,'']]],
+  ['selected',['selected',['../da/d11/char_menu_8c.html#a4c0237fdbba78af703ee275cc492a8b1',1,'selected():&#160;charMenu.c'],['../d6/dd9/char_menu_8h.html#a4c0237fdbba78af703ee275cc492a8b1',1,'selected():&#160;charMenu.c']]],
+  ['selection_5fchar',['SELECTION_CHAR',['../d6/dd9/char_menu_8h.html#ad448996cb01d4c7c45a11709f072f079',1,'charMenu.h']]],
+  ['selection_5fchar_5fend',['SELECTION_CHAR_END',['../d6/dd9/char_menu_8h.html#afd0cb4156695a89c603b5cde24b01e28',1,'charMenu.h']]],
+  ['serialglcd',['serialGLCD',['../dc/dd7/serial_g_l_c_d_8h.html#a9e19d3e9d60891fa4e86aa6f63dc1a2b',1,'serialGLCD.h']]],
+  ['serialglcd_2ec',['serialGLCD.c',['../d9/d0b/serial_g_l_c_d_8c.html',1,'']]],
+  ['serialglcd_2eh',['serialGLCD.h',['../dc/dd7/serial_g_l_c_d_8h.html',1,'']]],
+  ['serialglcd_5fbacklight',['serialGLCD_backlight',['../d9/d0b/serial_g_l_c_d_8c.html#a9a3a97eb67649a289a9224902b3e80ee',1,'serialGLCD_backlight(unsigned char backlight):&#160;serialGLCD.c'],['../dc/dd7/serial_g_l_c_d_8h.html#a9a3a97eb67649a289a9224902b3e80ee',1,'serialGLCD_backlight(unsigned char backlight):&#160;serialGLCD.c']]],
+  ['serialglcd_5fclear',['serialGLCD_clear',['../d9/d0b/serial_g_l_c_d_8c.html#af81a102f93ad0e110e6692a7fbbe3603',1,'serialGLCD_clear():&#160;serialGLCD.c'],['../dc/dd7/serial_g_l_c_d_8h.html#af81a102f93ad0e110e6692a7fbbe3603',1,'serialGLCD_clear():&#160;serialGLCD.c']]],
+  ['serialglcd_5fdrawbox',['serialGLCD_drawBox',['../d9/d0b/serial_g_l_c_d_8c.html#ac33b7640ee2eef7266d3edef65c5816c',1,'serialGLCD_drawBox(unsigned char TopLeftX, unsigned char TopLeftY, unsigned char BottomRightX, unsigned char BottomRightY, unsigned char draw):&#160;serialGLCD.c'],['../dc/dd7/serial_g_l_c_d_8h.html#ac33b7640ee2eef7266d3edef65c5816c',1,'serialGLCD_drawBox(unsigned char TopLeftX, unsigned char TopLeftY, unsigned char BottomRightX, unsigned char BottomRightY, unsigned char draw):&#160;serialGLCD.c']]],
+  ['serialglcd_5fgoto21x8_5fxy',['serialGLCD_goto21x8_XY',['../d9/d0b/serial_g_l_c_d_8c.html#a40ba8d903b4fc28343a0910388d20589',1,'serialGLCD_goto21x8_XY(unsigned char refX, unsigned char refY):&#160;serialGLCD.c'],['../dc/dd7/serial_g_l_c_d_8h.html#a40ba8d903b4fc28343a0910388d20589',1,'serialGLCD_goto21x8_XY(unsigned char refX, unsigned char refY):&#160;serialGLCD.c']]],
+  ['serialglcd_5fgotopixel_5fxy',['serialGLCD_gotoPixel_XY',['../d9/d0b/serial_g_l_c_d_8c.html#add931166f0ddad29efa2b31e44906f55',1,'serialGLCD_gotoPixel_XY(unsigned char pixelX, unsigned char pixelY):&#160;serialGLCD.c'],['../dc/dd7/serial_g_l_c_d_8h.html#add931166f0ddad29efa2b31e44906f55',1,'serialGLCD_gotoPixel_XY(unsigned char pixelX, unsigned char pixelY):&#160;serialGLCD.c']]],
+  ['serialglcd_5freverse',['serialGLCD_reverse',['../d9/d0b/serial_g_l_c_d_8c.html#ae8753c791c68ffcca564587e23e70bdd',1,'serialGLCD_reverse():&#160;serialGLCD.c'],['../dc/dd7/serial_g_l_c_d_8h.html#ae8753c791c68ffcca564587e23e70bdd',1,'serialGLCD_reverse():&#160;serialGLCD.c']]],
+  ['serialglcd_5fsendchar',['serialGLCD_sendChar',['../d9/d0b/serial_g_l_c_d_8c.html#afcb2488092e0deff3358181b2c56c1e0',1,'serialGLCD_sendChar(unsigned char myChar):&#160;serialGLCD.c'],['../dc/dd7/serial_g_l_c_d_8h.html#afcb2488092e0deff3358181b2c56c1e0',1,'serialGLCD_sendChar(unsigned char myChar):&#160;serialGLCD.c']]],
+  ['serialglcd_5fsendstring',['serialGLCD_sendString',['../d9/d0b/serial_g_l_c_d_8c.html#af9a185387ed5b23392393cdcbc030e6a',1,'serialGLCD_sendString(char *myString):&#160;serialGLCD.c'],['../dc/dd7/serial_g_l_c_d_8h.html#af9a185387ed5b23392393cdcbc030e6a',1,'serialGLCD_sendString(char *myString):&#160;serialGLCD.c']]],
+  ['serialglcd_5fsendstring_5fat_5f21x8',['serialGLCD_sendString_at_21x8',['../d9/d0b/serial_g_l_c_d_8c.html#af48e99c9d0d8da7922a015bb175a90bc',1,'serialGLCD.c']]],
+  ['serialglcd_5fwritemenustring',['serialGLCD_writeMenuString',['../da/d11/char_menu_8c.html#a1a40c6152b797dbe1b0dddb8d29de40f',1,'serialGLCD_writeMenuString(unsigned char refX, unsigned char refY, const char *lcd_menu_items, unsigned char add_line, char add_char):&#160;charMenu.c'],['../d6/dd9/char_menu_8h.html#a1a40c6152b797dbe1b0dddb8d29de40f',1,'serialGLCD_writeMenuString(unsigned char refX, unsigned char refY, const char *lcd_menu_items, unsigned char add_line, char add_char):&#160;charMenu.c']]],
+  ['set',['SET',['../d4/dbf/main_8h.html#ae940c8ff2fff05f0606ce9000e762af5',1,'main.h']]],
+  ['show_5fmenu',['show_menu',['../da/d11/char_menu_8c.html#adf9086686cc274a57fdd1f13fd890827',1,'show_menu(void):&#160;charMenu.c'],['../d6/dd9/char_menu_8h.html#adf9086686cc274a57fdd1f13fd890827',1,'show_menu(void):&#160;charMenu.c']]],
+  ['start',['start',['../da/d11/char_menu_8c.html#aedc96a40e844bc2efc8bbef1b0782702',1,'start(void):&#160;charMenu.c'],['../d6/dd9/char_menu_8h.html#aedc96a40e844bc2efc8bbef1b0782702',1,'start(void):&#160;charMenu.c']]]
 ];

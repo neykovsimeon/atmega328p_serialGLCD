@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sampledata',['sampleData',['../d0/d29/main_8c.html#a9dfc35a57991e438306be4d701167ba6',1,'main.c']]]
+  ['enter',['enter',['../df/d6c/struct_menu_structure.html#a18371001fe83f38e112c2cdb237fe821',1,'MenuStructure']]]
 ];
