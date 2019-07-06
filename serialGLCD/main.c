@@ -26,13 +26,7 @@
 #include "serialGLCD.h"
 #include "USART.h"
 #include "charMenu.h"
-//#include <time.h>
 #include <stdio.h>
-
-//char const compileDATE[] = __DATE__;	/* Mmm dd yyyy */
-//char const compileTIME[] = __TIME__;	/* hh:mm:ss */
-//char const compileDATE[] __attribute__((__progmem__)) = __DATE__;
-//char const compileTIME[] __attribute__((__progmem__)) = __TIME__;
 
 /** \file
  * ##Main function
@@ -51,10 +45,6 @@
  */
 int main(void)
 {
-	
-	printf("__DATE__: %s\n", __DATE__);
-	printf("__TIME__: %s\n", __TIME__);	
-	
 	int buttonPressed = 0;
 	int buttonPressed_delay = 0;
 	int buttonReleased_delay = 0;	
