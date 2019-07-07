@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DoxySettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SettingsFile>D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\doxySettings.xml</SettingsFile>
+  <ProjectName>serialGLCD</ProjectName>
+  <DoxyExePath>C:\Program Files\doxygen\bin\doxygen.exe</DoxyExePath>
+  <UseDefaultSettings>false</UseDefaultSettings>
+  <GenerateAsPartOfBuild>true</GenerateAsPartOfBuild>
+  <ConfigFilePath>D:\Projects\serialGLCD128x64_avr\serialGLCD\docs\doxyfile</ConfigFilePath>
+  <OutputDirPath>D:\Projects\serialGLCD128x64_avr\serialGLCD\docs</OutputDirPath>
+  <ShowErrorsAndWarnings>true</ShowErrorsAndWarnings>
+</DoxySettings>

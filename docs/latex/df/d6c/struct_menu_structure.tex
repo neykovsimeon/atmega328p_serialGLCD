@@ -1,0 +1,82 @@
+\hypertarget{struct_menu_structure}{}\section{Menu\+Structure Struct Reference}
+\label{struct_menu_structure}\index{MenuStructure@{MenuStructure}}
+
+
+{\ttfamily \#include $<$char\+Menu.\+h$>$}
+
+\subsection*{Data Fields}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{struct_menu_structure_a0726774a008bbbd0740ce033cd5b7c7a}{text}}
+\end{DoxyCompactItemize}
+
+\begin{Indent}\textbf{ num\+\_\+menupoints is linked with D\+I\+S\+P\+L\+A\+Y\+\_\+\+R\+O\+WS and U\+P\+P\+E\+R\+\_\+\+S\+P\+A\+CE}\par
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \mbox{\hyperlink{struct_menu_structure_a03bb2b81933329456adb5a4dd4e6ee68}{num\+\_\+menupoints}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ up, down, enter are linked with respective event handler (button, encoder, etc)}\par
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \mbox{\hyperlink{struct_menu_structure_ac983323a9dfb0e5b141bd9f06c7f2d94}{up}}
+\item 
+unsigned char \mbox{\hyperlink{struct_menu_structure_a91c52cae9cca9734fd5b116d9624db08}{down}}
+\item 
+unsigned char \mbox{\hyperlink{struct_menu_structure_a18371001fe83f38e112c2cdb237fe821}{enter}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \mbox{\hyperlink{struct_menu_structure_a9fa7771424c33bfa30bf05f7fdcc4a1a}{fp}} )(void)
+\end{DoxyCompactItemize}
+
+
+
+\subsection{Detailed Description}
+A structure to represent L\+CD menu 
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{struct_menu_structure_a91c52cae9cca9734fd5b116d9624db08}\label{struct_menu_structure_a91c52cae9cca9734fd5b116d9624db08}} 
+\index{MenuStructure@{MenuStructure}!down@{down}}
+\index{down@{down}!MenuStructure@{MenuStructure}}
+\subsubsection{\texorpdfstring{down}{down}}
+{\footnotesize\ttfamily unsigned char Menu\+Structure\+::down}
+
+tells what to be selected in case of an event \char`\"{}down\char`\"{} (button, rotary encoder, etc) \mbox{\Hypertarget{struct_menu_structure_a18371001fe83f38e112c2cdb237fe821}\label{struct_menu_structure_a18371001fe83f38e112c2cdb237fe821}} 
+\index{MenuStructure@{MenuStructure}!enter@{enter}}
+\index{enter@{enter}!MenuStructure@{MenuStructure}}
+\subsubsection{\texorpdfstring{enter}{enter}}
+{\footnotesize\ttfamily unsigned char Menu\+Structure\+::enter}
+
+tells what to be selected in case of an event \char`\"{}enter\char`\"{} (button, rotary encoder, etc) \mbox{\Hypertarget{struct_menu_structure_a9fa7771424c33bfa30bf05f7fdcc4a1a}\label{struct_menu_structure_a9fa7771424c33bfa30bf05f7fdcc4a1a}} 
+\index{MenuStructure@{MenuStructure}!fp@{fp}}
+\index{fp@{fp}!MenuStructure@{MenuStructure}}
+\subsubsection{\texorpdfstring{fp}{fp}}
+{\footnotesize\ttfamily void( $\ast$ Menu\+Structure\+::fp) (void)}
+
+pointer to predefined function to call in case of an event \char`\"{}enter\char`\"{} (button, rotary encoder, etc). No function is called if 0 is placed. \mbox{\Hypertarget{struct_menu_structure_a03bb2b81933329456adb5a4dd4e6ee68}\label{struct_menu_structure_a03bb2b81933329456adb5a4dd4e6ee68}} 
+\index{MenuStructure@{MenuStructure}!num\_menupoints@{num\_menupoints}}
+\index{num\_menupoints@{num\_menupoints}!MenuStructure@{MenuStructure}}
+\subsubsection{\texorpdfstring{num\_menupoints}{num\_menupoints}}
+{\footnotesize\ttfamily unsigned char Menu\+Structure\+::num\+\_\+menupoints}
+
+tells how many menu items within selected menu or sub-\/menu \mbox{\Hypertarget{struct_menu_structure_a0726774a008bbbd0740ce033cd5b7c7a}\label{struct_menu_structure_a0726774a008bbbd0740ce033cd5b7c7a}} 
+\index{MenuStructure@{MenuStructure}!text@{text}}
+\index{text@{text}!MenuStructure@{MenuStructure}}
+\subsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily const char$\ast$ Menu\+Structure\+::text}
+
+gives the menu item to be displayed \mbox{\Hypertarget{struct_menu_structure_ac983323a9dfb0e5b141bd9f06c7f2d94}\label{struct_menu_structure_ac983323a9dfb0e5b141bd9f06c7f2d94}} 
+\index{MenuStructure@{MenuStructure}!up@{up}}
+\index{up@{up}!MenuStructure@{MenuStructure}}
+\subsubsection{\texorpdfstring{up}{up}}
+{\footnotesize\ttfamily unsigned char Menu\+Structure\+::up}
+
+tells what to be selected in case of an event \char`\"{}up\char`\"{} (button, rotary encoder, etc) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{char_menu_8h}{char\+Menu.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,194 @@
+\hypertarget{char_menu_8h}{}\section{char\+Menu.\+h File Reference}
+\label{char_menu_8h}\index{charMenu.h@{charMenu.h}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}U\+S\+A\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}serial\+G\+L\+C\+D.\+h\char`\"{}}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_menu_structure}{Menu\+Structure}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{char_menu_8h_a453f383d78ef69885c591e9690728da2}{D\+I\+S\+P\+L\+A\+Y\+\_\+21x8}}
+\item 
+\#define \mbox{\hyperlink{char_menu_8h_a087a9910b3f195fafb8344a5a6389aa3}{V\+I\+S\+I\+B\+L\+E\+\_\+\+M\+E\+N\+U\+\_\+\+H\+E\+A\+D\+ER}}~\mbox{\hyperlink{main_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{T\+R\+UE}}
+\begin{DoxyCompactList}\small\item\em Define whether menu header is always visible. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{char_menu_8h_ad448996cb01d4c7c45a11709f072f079}{S\+E\+L\+E\+C\+T\+I\+O\+N\+\_\+\+C\+H\+AR}}~\textquotesingle{}$>$\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{char_menu_8h_afd0cb4156695a89c603b5cde24b01e28}{S\+E\+L\+E\+C\+T\+I\+O\+N\+\_\+\+C\+H\+A\+R\+\_\+\+E\+ND}}~\textquotesingle{}$<$\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{char_menu_8h_abdc19d7f30976562c2d3efce365ef8f4}{D\+I\+S\+P\+L\+A\+Y\+\_\+\+R\+O\+WS}}~8
+\begin{DoxyCompactList}\small\item\em this is copied into a variable and handled depends of num\+\_\+menupoints \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{char_menu_8h_a095e2d76efd2fb3cb9794009256b6ae6}{U\+P\+P\+E\+R\+\_\+\+S\+P\+A\+CE}}~6
+\begin{DoxyCompactList}\small\item\em this is copied into a variable and handled depends of num\+\_\+menupoints. Target is U\+P\+P\+E\+R\+\_\+\+S\+P\+A\+CE = D\+I\+S\+P\+L\+A\+Y\+\_\+\+R\+O\+WS -\/ 2 \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{char_menu_8h_abb75013cef6317f836e5d8410c0aa43b}{L\+O\+W\+E\+R\+\_\+\+S\+P\+A\+CE}}~1
+\item 
+\#define \mbox{\hyperlink{char_menu_8h_af5a76e143a77db7a7003c33e70e376d3}{I\+N\+I\+T\+I\+A\+L\+\_\+\+M\+A\+XX}}~21
+\item 
+\#define \mbox{\hyperlink{char_menu_8h_a4ca82d3107fbf3fcfb489d3ca46960b6}{I\+N\+I\+T\+I\+A\+L\+\_\+\+M\+A\+XY}}~8
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef const struct \mbox{\hyperlink{struct_menu_structure}{Menu\+Structure}} \mbox{\hyperlink{char_menu_8h_acf567e8cfba6ea42ed54a7bfc6aee6de}{Menu\+Entry}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{char_menu_8h_aedc96a40e844bc2efc8bbef1b0782702}{start}} (void)
+\item 
+void \mbox{\hyperlink{char_menu_8h_adf9086686cc274a57fdd1f13fd890827}{show\+\_\+menu}} (void)
+\item 
+void \mbox{\hyperlink{char_menu_8h_a1a40c6152b797dbe1b0dddb8d29de40f}{serial\+G\+L\+C\+D\+\_\+write\+Menu\+String}} (unsigned char refX, unsigned char refY, const char $\ast$lcd\+\_\+menu\+\_\+items, unsigned char add\+\_\+line, char add\+\_\+char)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{char_menu_8h_acf567e8cfba6ea42ed54a7bfc6aee6de}{Menu\+Entry}} \mbox{\hyperlink{char_menu_8h_adb967101fc7f610424156c31fc5d09dd}{my\+\_\+menu}} \mbox{[}$\,$\mbox{]}
+\item 
+unsigned char \mbox{\hyperlink{char_menu_8h_a4c0237fdbba78af703ee275cc492a8b1}{selected}}
+\begin{DoxyCompactList}\small\item\em selected is used for indexing the elements from Menu\+Entry defined structure \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{char_menu_8h_a453f383d78ef69885c591e9690728da2}\label{char_menu_8h_a453f383d78ef69885c591e9690728da2}} 
+\index{charMenu.h@{charMenu.h}!DISPLAY\_21x8@{DISPLAY\_21x8}}
+\index{DISPLAY\_21x8@{DISPLAY\_21x8}!charMenu.h@{charMenu.h}}
+\subsubsection{\texorpdfstring{DISPLAY\_21x8}{DISPLAY\_21x8}}
+{\footnotesize\ttfamily \#define D\+I\+S\+P\+L\+A\+Y\+\_\+21x8}
+
+Define display type 21x8. \mbox{\Hypertarget{char_menu_8h_abdc19d7f30976562c2d3efce365ef8f4}\label{char_menu_8h_abdc19d7f30976562c2d3efce365ef8f4}} 
+\index{charMenu.h@{charMenu.h}!DISPLAY\_ROWS@{DISPLAY\_ROWS}}
+\index{DISPLAY\_ROWS@{DISPLAY\_ROWS}!charMenu.h@{charMenu.h}}
+\subsubsection{\texorpdfstring{DISPLAY\_ROWS}{DISPLAY\_ROWS}}
+{\footnotesize\ttfamily \#define D\+I\+S\+P\+L\+A\+Y\+\_\+\+R\+O\+WS~8}
+
+
+
+this is copied into a variable and handled depends of num\+\_\+menupoints 
+
+\mbox{\Hypertarget{char_menu_8h_af5a76e143a77db7a7003c33e70e376d3}\label{char_menu_8h_af5a76e143a77db7a7003c33e70e376d3}} 
+\index{charMenu.h@{charMenu.h}!INITIAL\_MAXX@{INITIAL\_MAXX}}
+\index{INITIAL\_MAXX@{INITIAL\_MAXX}!charMenu.h@{charMenu.h}}
+\subsubsection{\texorpdfstring{INITIAL\_MAXX}{INITIAL\_MAXX}}
+{\footnotesize\ttfamily \#define I\+N\+I\+T\+I\+A\+L\+\_\+\+M\+A\+XX~21}
+
+\mbox{\Hypertarget{char_menu_8h_a4ca82d3107fbf3fcfb489d3ca46960b6}\label{char_menu_8h_a4ca82d3107fbf3fcfb489d3ca46960b6}} 
+\index{charMenu.h@{charMenu.h}!INITIAL\_MAXY@{INITIAL\_MAXY}}
+\index{INITIAL\_MAXY@{INITIAL\_MAXY}!charMenu.h@{charMenu.h}}
+\subsubsection{\texorpdfstring{INITIAL\_MAXY}{INITIAL\_MAXY}}
+{\footnotesize\ttfamily \#define I\+N\+I\+T\+I\+A\+L\+\_\+\+M\+A\+XY~8}
+
+\mbox{\Hypertarget{char_menu_8h_abb75013cef6317f836e5d8410c0aa43b}\label{char_menu_8h_abb75013cef6317f836e5d8410c0aa43b}} 
+\index{charMenu.h@{charMenu.h}!LOWER\_SPACE@{LOWER\_SPACE}}
+\index{LOWER\_SPACE@{LOWER\_SPACE}!charMenu.h@{charMenu.h}}
+\subsubsection{\texorpdfstring{LOWER\_SPACE}{LOWER\_SPACE}}
+{\footnotesize\ttfamily \#define L\+O\+W\+E\+R\+\_\+\+S\+P\+A\+CE~1}
+
+\mbox{\Hypertarget{char_menu_8h_ad448996cb01d4c7c45a11709f072f079}\label{char_menu_8h_ad448996cb01d4c7c45a11709f072f079}} 
+\index{charMenu.h@{charMenu.h}!SELECTION\_CHAR@{SELECTION\_CHAR}}
+\index{SELECTION\_CHAR@{SELECTION\_CHAR}!charMenu.h@{charMenu.h}}
+\subsubsection{\texorpdfstring{SELECTION\_CHAR}{SELECTION\_CHAR}}
+{\footnotesize\ttfamily \#define S\+E\+L\+E\+C\+T\+I\+O\+N\+\_\+\+C\+H\+AR~\textquotesingle{}$>$\textquotesingle{}}
+
+Define selection symbols \mbox{\Hypertarget{char_menu_8h_afd0cb4156695a89c603b5cde24b01e28}\label{char_menu_8h_afd0cb4156695a89c603b5cde24b01e28}} 
+\index{charMenu.h@{charMenu.h}!SELECTION\_CHAR\_END@{SELECTION\_CHAR\_END}}
+\index{SELECTION\_CHAR\_END@{SELECTION\_CHAR\_END}!charMenu.h@{charMenu.h}}
+\subsubsection{\texorpdfstring{SELECTION\_CHAR\_END}{SELECTION\_CHAR\_END}}
+{\footnotesize\ttfamily \#define S\+E\+L\+E\+C\+T\+I\+O\+N\+\_\+\+C\+H\+A\+R\+\_\+\+E\+ND~\textquotesingle{}$<$\textquotesingle{}}
+
+\mbox{\Hypertarget{char_menu_8h_a095e2d76efd2fb3cb9794009256b6ae6}\label{char_menu_8h_a095e2d76efd2fb3cb9794009256b6ae6}} 
+\index{charMenu.h@{charMenu.h}!UPPER\_SPACE@{UPPER\_SPACE}}
+\index{UPPER\_SPACE@{UPPER\_SPACE}!charMenu.h@{charMenu.h}}
+\subsubsection{\texorpdfstring{UPPER\_SPACE}{UPPER\_SPACE}}
+{\footnotesize\ttfamily \#define U\+P\+P\+E\+R\+\_\+\+S\+P\+A\+CE~6}
+
+
+
+this is copied into a variable and handled depends of num\+\_\+menupoints. Target is U\+P\+P\+E\+R\+\_\+\+S\+P\+A\+CE = D\+I\+S\+P\+L\+A\+Y\+\_\+\+R\+O\+WS -\/ 2 
+
+\mbox{\Hypertarget{char_menu_8h_a087a9910b3f195fafb8344a5a6389aa3}\label{char_menu_8h_a087a9910b3f195fafb8344a5a6389aa3}} 
+\index{charMenu.h@{charMenu.h}!VISIBLE\_MENU\_HEADER@{VISIBLE\_MENU\_HEADER}}
+\index{VISIBLE\_MENU\_HEADER@{VISIBLE\_MENU\_HEADER}!charMenu.h@{charMenu.h}}
+\subsubsection{\texorpdfstring{VISIBLE\_MENU\_HEADER}{VISIBLE\_MENU\_HEADER}}
+{\footnotesize\ttfamily \#define V\+I\+S\+I\+B\+L\+E\+\_\+\+M\+E\+N\+U\+\_\+\+H\+E\+A\+D\+ER~\mbox{\hyperlink{main_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{T\+R\+UE}}}
+
+
+
+Define whether menu header is always visible. 
+
+First row of the menu could be reserved for menu header.
+
+Use flag T\+R\+UE to keep menu header always visible. If flag F\+A\+L\+SE is used, then menu header will shift accordingly depending of the selected menu item. 
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{char_menu_8h_acf567e8cfba6ea42ed54a7bfc6aee6de}\label{char_menu_8h_acf567e8cfba6ea42ed54a7bfc6aee6de}} 
+\index{charMenu.h@{charMenu.h}!MenuEntry@{MenuEntry}}
+\index{MenuEntry@{MenuEntry}!charMenu.h@{charMenu.h}}
+\subsubsection{\texorpdfstring{MenuEntry}{MenuEntry}}
+{\footnotesize\ttfamily typedef const struct \mbox{\hyperlink{struct_menu_structure}{Menu\+Structure}} \mbox{\hyperlink{char_menu_8h_acf567e8cfba6ea42ed54a7bfc6aee6de}{Menu\+Entry}}}
+
+A structure to represent L\+CD menu 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{char_menu_8h_a1a40c6152b797dbe1b0dddb8d29de40f}\label{char_menu_8h_a1a40c6152b797dbe1b0dddb8d29de40f}} 
+\index{charMenu.h@{charMenu.h}!serialGLCD\_writeMenuString@{serialGLCD\_writeMenuString}}
+\index{serialGLCD\_writeMenuString@{serialGLCD\_writeMenuString}!charMenu.h@{charMenu.h}}
+\subsubsection{\texorpdfstring{serialGLCD\_writeMenuString()}{serialGLCD\_writeMenuString()}}
+{\footnotesize\ttfamily void serial\+G\+L\+C\+D\+\_\+write\+Menu\+String (\begin{DoxyParamCaption}\item[{unsigned char}]{refX,  }\item[{unsigned char}]{refY,  }\item[{const char $\ast$}]{lcd\+\_\+menu\+\_\+items,  }\item[{unsigned char}]{add\+\_\+line,  }\item[{char}]{add\+\_\+char }\end{DoxyParamCaption})}
+
+\subsubsection*{Menu Handler -\/ send L\+CD menu string at reference location}
+
+Set refX and refY to the character L\+CD format (e.\+g. 21x8) indexed from 0, 0
+
+Consider U\+A\+RT was initialized and enabled. 
+\begin{DoxyParams}{Parameters}
+{\em refX,refY} & reference coordinates as for character L\+CD format (e.\+g. 21 x 8) indexed from 0, 0. \\
+\hline
+{\em $\ast$lcd\+\_\+menu\+\_\+items} & a pointer to the characters in selected menu item to be displayed on the L\+CD screen \\
+\hline
+{\em add\+\_\+line} & if 1 (or just $>$ 1) then complete the row with character given in add\+\_\+char. If add\+\_\+line =0 the row would not be completed till the end. \\
+\hline
+{\em add\+\_\+char} & character to be used to complete the row after the menu string if add\+\_\+line $>$=1. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{char_menu_8h_adf9086686cc274a57fdd1f13fd890827}\label{char_menu_8h_adf9086686cc274a57fdd1f13fd890827}} 
+\index{charMenu.h@{charMenu.h}!show\_menu@{show\_menu}}
+\index{show\_menu@{show\_menu}!charMenu.h@{charMenu.h}}
+\subsubsection{\texorpdfstring{show\_menu()}{show\_menu()}}
+{\footnotesize\ttfamily void show\+\_\+menu (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\subsubsection*{Menu Handler -\/ show L\+CD menu on the screen}
+
+Consider U\+A\+RT was initialized and enabled. \mbox{\Hypertarget{char_menu_8h_aedc96a40e844bc2efc8bbef1b0782702}\label{char_menu_8h_aedc96a40e844bc2efc8bbef1b0782702}} 
+\index{charMenu.h@{charMenu.h}!start@{start}}
+\index{start@{start}!charMenu.h@{charMenu.h}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\subsubsection*{Menu Handler -\/ Link a function to selected menu item}
+
+This function is just an example to demonstrate how to link an executable code to particular selected menu item when an event \char`\"{}enter\char`\"{} occurs (button pressed, encoder, etc).
+
+Consider U\+A\+RT was initialized and enabled if L\+CD operation. 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{char_menu_8h_adb967101fc7f610424156c31fc5d09dd}\label{char_menu_8h_adb967101fc7f610424156c31fc5d09dd}} 
+\index{charMenu.h@{charMenu.h}!my\_menu@{my\_menu}}
+\index{my\_menu@{my\_menu}!charMenu.h@{charMenu.h}}
+\subsubsection{\texorpdfstring{my\_menu}{my\_menu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{char_menu_8h_acf567e8cfba6ea42ed54a7bfc6aee6de}{Menu\+Entry}} my\+\_\+menu\mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{char_menu_8h_a4c0237fdbba78af703ee275cc492a8b1}\label{char_menu_8h_a4c0237fdbba78af703ee275cc492a8b1}} 
+\index{charMenu.h@{charMenu.h}!selected@{selected}}
+\index{selected@{selected}!charMenu.h@{charMenu.h}}
+\subsubsection{\texorpdfstring{selected}{selected}}
+{\footnotesize\ttfamily unsigned char selected}
+
+
+
+selected is used for indexing the elements from Menu\+Entry defined structure 
+
