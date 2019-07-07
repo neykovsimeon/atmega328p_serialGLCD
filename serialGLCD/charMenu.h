@@ -1,8 +1,7 @@
-﻿/*
+﻿/**
  * charMenu.h
  *
- * Created: 1.7.2019 г. 21:54:22
- *  Author: Simeon Neykov
+ * \author Simeon Neykov
  */ 
 
 #ifndef CHARMENU_H_

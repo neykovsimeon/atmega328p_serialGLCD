@@ -2,8 +2,7 @@
  *
  * USART.h
  *
- * Created: 30.6.2019 г. 17:16:22
- *  Author: Simeon Neykov
+ * \author Simeon Neykov
  */ 
 
 

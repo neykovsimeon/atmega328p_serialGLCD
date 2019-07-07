@@ -3,9 +3,9 @@
   <SettingsFile>D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\doxySettings.xml</SettingsFile>
   <ProjectName>serialGLCD</ProjectName>
   <DoxyExePath>C:\Program Files\doxygen\bin\doxygen.exe</DoxyExePath>
-  <UseDefaultSettings>false</UseDefaultSettings>
+  <UseDefaultSettings>true</UseDefaultSettings>
   <GenerateAsPartOfBuild>true</GenerateAsPartOfBuild>
-  <ConfigFilePath>D:\Projects\serialGLCD128x64_avr\serialGLCD\docs\doxyfile</ConfigFilePath>
-  <OutputDirPath>D:\Projects\serialGLCD128x64_avr\serialGLCD\docs</OutputDirPath>
+  <ConfigFilePath>D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\doxyfile</ConfigFilePath>
+  <OutputDirPath>D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\doxygen</OutputDirPath>
   <ShowErrorsAndWarnings>true</ShowErrorsAndWarnings>
 </DoxySettings>

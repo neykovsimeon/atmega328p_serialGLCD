@@ -1,7 +1,6 @@
 ﻿/**
  * main.h
  *
- * \date	30.6.2019 г. 18:44:02
  * \author	Simeon nEYKOV
  */ 
 
