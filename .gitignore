@@ -1,4 +1,4 @@
 /serialGLCD/Debug
 /serialGLCD/Release
 /docs
-/serialGLCD/doxygen
+#/serialGLCD/doxygen

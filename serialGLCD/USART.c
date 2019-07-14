@@ -70,10 +70,15 @@ void UART0_Init (uint16_t baud, char AsyncDoubleSpeed, char dataLength, char Par
  * This function checks and wait until USART has finished previous transmission.
  * One should use this each time before loading the transmit buffer UDRn with new data.
  * @param add_delay One may consider an additional delay depends of the receiver needs (e.g. serial graphic LCD)
- *
+ * - in current implementation "add_delay" is just used as a true/false condition whether to execute delay or not
+ * - the delay value in ms is predefined in a macro GLCD_DELAY, specifically needed to serial GLCD
+ *     - Note!: the built-in avr delay cycle expects a compile time integer constant, thus it couldn't be transferred by a variable
+ *     - this is why add_delay is used only for true/false disposition and not to give the delay value in ms
  */
-void wait_while_UART0_is_busy(unsigned char add_delay)
+void wait_while_UART0_is_busy(unsigned int add_delay)
 {
 	while (!(UCSR0A & (1 << UDRE0))); // check if the transmitter is busy
 	if (add_delay) _delay_ms(GLCD_DELAY);
+// alternative use doesn't work because the built-in avr delay cycle expects a compile time int constant	
+	//if (add_delay) _delay_ms(add_delay);
 }

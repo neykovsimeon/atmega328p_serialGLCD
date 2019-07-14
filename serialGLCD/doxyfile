@@ -813,7 +813,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                 = 
+INPUT                 ="D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\charMenu.c" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\charMenu.h" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\main.c" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\main.h" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\ports_and_pins.c" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\ports_and_pins.h" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\serialGLCD.c" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\serialGLCD.h" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\USART.c" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\USART.h" 
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses

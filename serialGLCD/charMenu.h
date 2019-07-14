@@ -1,4 +1,4 @@
-﻿/**
+﻿/*
  * charMenu.h
  *
  * \author Simeon Neykov
@@ -112,7 +112,7 @@ typedef const struct MenuStructure {
 extern MenuEntry my_menu[];
 extern unsigned char selected;
 
-extern void start (void);
+//extern void start (void);
 void show_menu(void);
 void serialGLCD_writeMenuString (unsigned char refX, unsigned char refY, const char *lcd_menu_items, unsigned char add_line, char add_char);
 //extern void wait_while_UART0_is_busy();

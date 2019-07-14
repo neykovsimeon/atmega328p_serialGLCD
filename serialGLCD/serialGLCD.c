@@ -75,6 +75,7 @@ void serialGLCD_clear()
 	UDR0 = 0x7C;
 	wait_while_UART0_is_busy(0); // check if the transmitter is busy
 	UDR0 = 0x00;
+	_delay_ms(1);
 }
 
 /** ##Serial GLCD - Send an ASCII Character.
@@ -93,8 +94,7 @@ void serialGLCD_clear()
  */
 void serialGLCD_sendChar(unsigned char myChar)
 {
-	wait_while_UART0_is_busy(1); // check if the transmitter is busy
-	//_delay_ms(GLCD_DELAY);
+	wait_while_UART0_is_busy(GLCD_DELAY); // check if the transmitter is busy
 	UDR0 = myChar;
 }
 
@@ -156,7 +156,7 @@ void serialGLCD_gotoPixel_XY(unsigned char pixelX, unsigned char pixelY)
 	UDR0 = 0x19;
 	wait_while_UART0_is_busy(0); // check if the transmitter is busy
 	UDR0 = pixelY;	
-	_delay_ms(5);
+	_delay_ms(1);
 }
 
 /** ##Serial ASCII commands - Set refX and refY Coordinates referred to 21x8 display format.

@@ -1,0 +1,210 @@
+\hypertarget{main_8c}{}\section{main.\+c File Reference}
+\label{main_8c}\index{main.c@{main.c}}
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}serial\+G\+L\+C\+D.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}U\+S\+A\+R\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}char\+Menu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ports\+\_\+and\+\_\+pins.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \mbox{\hyperlink{main_8c_a3caea97f50440c0bbeb2c0460ec68666}{read\+\_\+\+P\+I\+N\+C\+\_\+logical\+\_\+level}} (unsigned char pin)
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_aedc96a40e844bc2efc8bbef1b0782702}{start}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_abacd11b544e6c80b125878983bdb69ab}{rotary\+\_\+counter}} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \mbox{\hyperlink{main_8c_a5e179f1c25bb2a5f6c2115a2f589b901}{update\+\_\+menu}} = 1
+\item 
+unsigned char \mbox{\hyperlink{main_8c_abe413cb96d839cbe31417aa52d920f21}{temp}} = 0
+\item 
+int \mbox{\hyperlink{main_8c_aa340fe252240ff18ef3a12bb627eb633}{rotary\+\_\+delay}} = \mbox{\hyperlink{main_8h_a43decb93236ed6648909bf9b45251bb9}{R\+O\+T\+A\+R\+Y\+\_\+\+D\+E\+L\+AY}}
+\item 
+unsigned char \mbox{\hyperlink{main_8c_ad26c1cac94de534ac7167295c834efb1}{last\+State\+R\+O\+T\+A\+R\+Y\+\_\+\+CK}} = 0
+\item 
+unsigned char \mbox{\hyperlink{main_8c_aa327b58b2464728e11694d7b14f69e9a}{current\+State\+R\+O\+T\+A\+R\+Y\+\_\+\+CK}} = 0
+\item 
+unsigned char \mbox{\hyperlink{main_8c_a66707cde57730f34acbe9b704539e137}{current\+State\+R\+O\+T\+A\+R\+Y\+\_\+\+DA}} = 0
+\item 
+unsigned char \mbox{\hyperlink{main_8c_a41096e814b31e499b584dc5cf83626aa}{button\+Pressed}} = 0
+\item 
+int \mbox{\hyperlink{main_8c_a88bfa0f3b81f3dea157839b0088fbfde}{button\+Pressed\+\_\+delay}} = 0
+\item 
+int \mbox{\hyperlink{main_8c_abd3fcaba7f125778dce5448749de8c91}{button\+Released\+\_\+delay}} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{Main function}
+
+
+\begin{DoxyItemize}
+\item Declare and initialize needed software variables
+\begin{DoxyItemize}
+\item button\+Pressed\+\_\+delay, button\+Released\+\_\+delay are used for push button debouncing
+\item update\+\_\+menu controls menu to be updated only when changes are supposed (button pressed, etc)
+\item initialize menu item selector
+\end{DoxyItemize}
+\item M\+CU\textquotesingle{}s ports and pins definitions and initializations
+\item U\+S\+A\+RT Initialization
+\item Intro screen (just for fun ;) and a bit for some debuging purposes)
+\item Infinite loop
+\begin{DoxyItemize}
+\item Show menu. Since this is slow process call this function only when the menu is to be updated (e.\+g. button is pressed)
+\item Check buttons and act respectively. Consider debouncing delays. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a3caea97f50440c0bbeb2c0460ec68666}\label{main_8c_a3caea97f50440c0bbeb2c0460ec68666}} 
+\index{main.c@{main.c}!read\_PINC\_logical\_level@{read\_PINC\_logical\_level}}
+\index{read\_PINC\_logical\_level@{read\_PINC\_logical\_level}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{read\_PINC\_logical\_level()}{read\_PINC\_logical\_level()}}
+{\footnotesize\ttfamily unsigned char read\+\_\+\+P\+I\+N\+C\+\_\+logical\+\_\+level (\begin{DoxyParamCaption}\item[{unsigned char}]{pin }\end{DoxyParamCaption})}
+
+\subsubsection*{Digital read the state of a specified pin number of port C}
+
+
+\begin{DoxyItemize}
+\item Motivation
+\begin{DoxyItemize}
+\item R\+E\+AD macro (port \& (1$<$$<$pin)), where port is P\+I\+NC, P\+I\+ND or P\+I\+NB, would return\+:
+\begin{DoxyItemize}
+\item 0 if the pin is clear (L\+OW state)
+\item something $>$ 0 if the pin is set (H\+I\+GH state). The exact value would depends of the pin number (position)
+\end{DoxyItemize}
+\item In a particular use cases (e.\+g. rotary encoder handler) it is needed to check
+\begin{DoxyItemize}
+\item current versus previous state of a pin (e.\+g. rotary clk signal)
+\item current status of different pins (e.\+g. rotary clk and rotary data signals)
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item Dedicated read\+\_\+\+P\+I\+Nx\+\_\+logical\+\_\+level() functions return 0 if the pin is L\+OW (clear) and return 1 (doesn\textquotesingle{}t depends of the pin position) if the pin is H\+I\+GH
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & tested pin number from port C \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_abacd11b544e6c80b125878983bdb69ab}\label{main_8c_abacd11b544e6c80b125878983bdb69ab}} 
+\index{main.c@{main.c}!rotary\_counter@{rotary\_counter}}
+\index{rotary\_counter@{rotary\_counter}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{rotary\_counter()}{rotary\_counter()}}
+{\footnotesize\ttfamily void rotary\+\_\+counter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\subsubsection*{Menu Handler -\/ example rotary encoder application function}
+
+This function is just an example to demonstrate how to link an executable code to particular selected menu item when an event \char`\"{}enter\char`\"{} occurs (button pressed, encoder, etc).
+
+Counter from 0 to 100 is controlled by rotary encoder and displayed on the screen
+
+Concept\+:
+\begin{DoxyItemize}
+\item once called, this function is keeping the control loop until rotary push switch is pressed
+\item display is cleared
+\item rotary encoder handler\+:
+\begin{DoxyItemize}
+\item refresh valid state of the R\+O\+T\+A\+R\+Y\+\_\+\+CK (once at the beginning of the called function)
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+go into loop (exit the loop when rotary switch is pressed)
+\begin{DoxyItemize}
+\item within the loop\+:
+\begin{DoxyItemize}
+\item check status of the R\+O\+T\+A\+R\+Y\+\_\+\+CK (clock signal), if different than the previous it is supposed a rotation is ongoing
+\item if a rotation is ongoing, check status of R\+O\+T\+A\+R\+Y\+\_\+\+DA (data signal).
+\begin{DoxyItemize}
+\item if CK and DA in the same state decrement the counter, else increment
+\item use L\+ED output for additional outside indication of rotation direction
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item each time CK or DA pin status is checked -\/ do it in a loop until de-\/bounced confident result is achieved (the usage of R\+O\+T\+A\+R\+Y\+\_\+\+D\+E\+L\+AY)
+\end{DoxyItemize}
+
+Use \textquotesingle{}sprintf(Result\+String, \char`\"{}\%d\char`\"{}, my\+Counter);\textquotesingle{} to convert binary (unsigned char) counter into string for L\+CD display
+\begin{DoxyItemize}
+\item clear the remains symbols when go back to less digits range (100 -\/$>$ 99, 10 -\/$>$ 9, etc) 
+\end{DoxyItemize}\mbox{\Hypertarget{main_8c_aedc96a40e844bc2efc8bbef1b0782702}\label{main_8c_aedc96a40e844bc2efc8bbef1b0782702}} 
+\index{main.c@{main.c}!start@{start}}
+\index{start@{start}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\subsubsection*{Menu Handler -\/ example function linked to selected menu item}
+
+This function is just an example to demonstrate how to link an executable code to particular selected menu item when an event \char`\"{}enter\char`\"{} occurs (button pressed, encoder, etc).
+
+Consider U\+A\+RT was initialized and enabled if L\+CD operation. 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_a41096e814b31e499b584dc5cf83626aa}\label{main_8c_a41096e814b31e499b584dc5cf83626aa}} 
+\index{main.c@{main.c}!buttonPressed@{buttonPressed}}
+\index{buttonPressed@{buttonPressed}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{buttonPressed}{buttonPressed}}
+{\footnotesize\ttfamily unsigned char button\+Pressed = 0}
+
+\mbox{\Hypertarget{main_8c_a88bfa0f3b81f3dea157839b0088fbfde}\label{main_8c_a88bfa0f3b81f3dea157839b0088fbfde}} 
+\index{main.c@{main.c}!buttonPressed\_delay@{buttonPressed\_delay}}
+\index{buttonPressed\_delay@{buttonPressed\_delay}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{buttonPressed\_delay}{buttonPressed\_delay}}
+{\footnotesize\ttfamily int button\+Pressed\+\_\+delay = 0}
+
+\mbox{\Hypertarget{main_8c_abd3fcaba7f125778dce5448749de8c91}\label{main_8c_abd3fcaba7f125778dce5448749de8c91}} 
+\index{main.c@{main.c}!buttonReleased\_delay@{buttonReleased\_delay}}
+\index{buttonReleased\_delay@{buttonReleased\_delay}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{buttonReleased\_delay}{buttonReleased\_delay}}
+{\footnotesize\ttfamily int button\+Released\+\_\+delay = 0}
+
+\mbox{\Hypertarget{main_8c_aa327b58b2464728e11694d7b14f69e9a}\label{main_8c_aa327b58b2464728e11694d7b14f69e9a}} 
+\index{main.c@{main.c}!currentStateROTARY\_CK@{currentStateROTARY\_CK}}
+\index{currentStateROTARY\_CK@{currentStateROTARY\_CK}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{currentStateROTARY\_CK}{currentStateROTARY\_CK}}
+{\footnotesize\ttfamily unsigned char current\+State\+R\+O\+T\+A\+R\+Y\+\_\+\+CK = 0}
+
+\mbox{\Hypertarget{main_8c_a66707cde57730f34acbe9b704539e137}\label{main_8c_a66707cde57730f34acbe9b704539e137}} 
+\index{main.c@{main.c}!currentStateROTARY\_DA@{currentStateROTARY\_DA}}
+\index{currentStateROTARY\_DA@{currentStateROTARY\_DA}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{currentStateROTARY\_DA}{currentStateROTARY\_DA}}
+{\footnotesize\ttfamily unsigned char current\+State\+R\+O\+T\+A\+R\+Y\+\_\+\+DA = 0}
+
+\mbox{\Hypertarget{main_8c_ad26c1cac94de534ac7167295c834efb1}\label{main_8c_ad26c1cac94de534ac7167295c834efb1}} 
+\index{main.c@{main.c}!lastStateROTARY\_CK@{lastStateROTARY\_CK}}
+\index{lastStateROTARY\_CK@{lastStateROTARY\_CK}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{lastStateROTARY\_CK}{lastStateROTARY\_CK}}
+{\footnotesize\ttfamily unsigned char last\+State\+R\+O\+T\+A\+R\+Y\+\_\+\+CK = 0}
+
+\mbox{\Hypertarget{main_8c_aa340fe252240ff18ef3a12bb627eb633}\label{main_8c_aa340fe252240ff18ef3a12bb627eb633}} 
+\index{main.c@{main.c}!rotary\_delay@{rotary\_delay}}
+\index{rotary\_delay@{rotary\_delay}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{rotary\_delay}{rotary\_delay}}
+{\footnotesize\ttfamily int rotary\+\_\+delay = \mbox{\hyperlink{main_8h_a43decb93236ed6648909bf9b45251bb9}{R\+O\+T\+A\+R\+Y\+\_\+\+D\+E\+L\+AY}}}
+
+\mbox{\Hypertarget{main_8c_abe413cb96d839cbe31417aa52d920f21}\label{main_8c_abe413cb96d839cbe31417aa52d920f21}} 
+\index{main.c@{main.c}!temp@{temp}}
+\index{temp@{temp}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{temp}{temp}}
+{\footnotesize\ttfamily unsigned char temp = 0}
+
+\mbox{\Hypertarget{main_8c_a5e179f1c25bb2a5f6c2115a2f589b901}\label{main_8c_a5e179f1c25bb2a5f6c2115a2f589b901}} 
+\index{main.c@{main.c}!update\_menu@{update\_menu}}
+\index{update\_menu@{update\_menu}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{update\_menu}{update\_menu}}
+{\footnotesize\ttfamily unsigned char update\+\_\+menu = 1}
+

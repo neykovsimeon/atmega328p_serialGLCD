@@ -1,0 +1,109 @@
+\hypertarget{ports__and__pins_8c}{}\section{ports\+\_\+and\+\_\+pins.\+c File Reference}
+\label{ports__and__pins_8c}\index{ports\_and\_pins.c@{ports\_and\_pins.c}}
+{\ttfamily \#include \char`\"{}ports\+\_\+and\+\_\+pins.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \mbox{\hyperlink{ports__and__pins_8c_a3caea97f50440c0bbeb2c0460ec68666}{read\+\_\+\+P\+I\+N\+C\+\_\+logical\+\_\+level}} (unsigned char pin)
+\item 
+unsigned char \mbox{\hyperlink{ports__and__pins_8c_a96c82a530e7dee0a0ae91faaf12b2655}{read\+\_\+\+P\+I\+N\+D\+\_\+logical\+\_\+level}} (unsigned char pin)
+\item 
+unsigned char \mbox{\hyperlink{ports__and__pins_8c_a63c24abfcc367e135273c72bdded086a}{read\+\_\+\+P\+I\+N\+B\+\_\+logical\+\_\+level}} (unsigned char pin)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ports__and__pins_8c_a63c24abfcc367e135273c72bdded086a}\label{ports__and__pins_8c_a63c24abfcc367e135273c72bdded086a}} 
+\index{ports\_and\_pins.c@{ports\_and\_pins.c}!read\_PINB\_logical\_level@{read\_PINB\_logical\_level}}
+\index{read\_PINB\_logical\_level@{read\_PINB\_logical\_level}!ports\_and\_pins.c@{ports\_and\_pins.c}}
+\subsubsection{\texorpdfstring{read\_PINB\_logical\_level()}{read\_PINB\_logical\_level()}}
+{\footnotesize\ttfamily unsigned char read\+\_\+\+P\+I\+N\+B\+\_\+logical\+\_\+level (\begin{DoxyParamCaption}\item[{unsigned char}]{pin }\end{DoxyParamCaption})}
+
+\subsubsection*{Digital read the state of a specified pin number of port B}
+
+
+\begin{DoxyItemize}
+\item Motivation
+\begin{DoxyItemize}
+\item R\+E\+AD macro (port \& (1$<$$<$pin)), where port is P\+I\+NC, P\+I\+ND or P\+I\+NB, would return\+:
+\begin{DoxyItemize}
+\item 0 if the pin is clear (L\+OW state)
+\item something $>$ 0 if the pin is set (H\+I\+GH state). The exact value would depends of the pin number (position)
+\end{DoxyItemize}
+\item In a particular use cases (e.\+g. rotary encoder handler) it is needed to check
+\begin{DoxyItemize}
+\item current versus previous state of a pin (e.\+g. rotary clk signal)
+\item current status of different pins (e.\+g. rotary clk and rotary data signals)
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item Dedicated read\+\_\+\+P\+I\+Nx\+\_\+logical\+\_\+level() functions return 0 if the pin is L\+OW (clear) and return 1 (doesn\textquotesingle{}t depends of the pin position) if the pin is H\+I\+GH
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & tested pin number from port B \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ports__and__pins_8c_a3caea97f50440c0bbeb2c0460ec68666}\label{ports__and__pins_8c_a3caea97f50440c0bbeb2c0460ec68666}} 
+\index{ports\_and\_pins.c@{ports\_and\_pins.c}!read\_PINC\_logical\_level@{read\_PINC\_logical\_level}}
+\index{read\_PINC\_logical\_level@{read\_PINC\_logical\_level}!ports\_and\_pins.c@{ports\_and\_pins.c}}
+\subsubsection{\texorpdfstring{read\_PINC\_logical\_level()}{read\_PINC\_logical\_level()}}
+{\footnotesize\ttfamily unsigned char read\+\_\+\+P\+I\+N\+C\+\_\+logical\+\_\+level (\begin{DoxyParamCaption}\item[{unsigned char}]{pin }\end{DoxyParamCaption})}
+
+\subsubsection*{Digital read the state of a specified pin number of port C}
+
+
+\begin{DoxyItemize}
+\item Motivation
+\begin{DoxyItemize}
+\item R\+E\+AD macro (port \& (1$<$$<$pin)), where port is P\+I\+NC, P\+I\+ND or P\+I\+NB, would return\+:
+\begin{DoxyItemize}
+\item 0 if the pin is clear (L\+OW state)
+\item something $>$ 0 if the pin is set (H\+I\+GH state). The exact value would depends of the pin number (position)
+\end{DoxyItemize}
+\item In a particular use cases (e.\+g. rotary encoder handler) it is needed to check
+\begin{DoxyItemize}
+\item current versus previous state of a pin (e.\+g. rotary clk signal)
+\item current status of different pins (e.\+g. rotary clk and rotary data signals)
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item Dedicated read\+\_\+\+P\+I\+Nx\+\_\+logical\+\_\+level() functions return 0 if the pin is L\+OW (clear) and return 1 (doesn\textquotesingle{}t depends of the pin position) if the pin is H\+I\+GH
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & tested pin number from port C \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ports__and__pins_8c_a96c82a530e7dee0a0ae91faaf12b2655}\label{ports__and__pins_8c_a96c82a530e7dee0a0ae91faaf12b2655}} 
+\index{ports\_and\_pins.c@{ports\_and\_pins.c}!read\_PIND\_logical\_level@{read\_PIND\_logical\_level}}
+\index{read\_PIND\_logical\_level@{read\_PIND\_logical\_level}!ports\_and\_pins.c@{ports\_and\_pins.c}}
+\subsubsection{\texorpdfstring{read\_PIND\_logical\_level()}{read\_PIND\_logical\_level()}}
+{\footnotesize\ttfamily unsigned char read\+\_\+\+P\+I\+N\+D\+\_\+logical\+\_\+level (\begin{DoxyParamCaption}\item[{unsigned char}]{pin }\end{DoxyParamCaption})}
+
+\subsubsection*{Digital read the state of a specified pin number of port D}
+
+
+\begin{DoxyItemize}
+\item Motivation
+\begin{DoxyItemize}
+\item R\+E\+AD macro (port \& (1$<$$<$pin)), where port is P\+I\+NC, P\+I\+ND or P\+I\+NB, would return\+:
+\begin{DoxyItemize}
+\item 0 if the pin is clear (L\+OW state)
+\item something $>$ 0 if the pin is set (H\+I\+GH state). The exact value would depends of the pin number (position)
+\end{DoxyItemize}
+\item In a particular use cases (e.\+g. rotary encoder handler) it is needed to check
+\begin{DoxyItemize}
+\item current versus previous state of a pin (e.\+g. rotary clk signal)
+\item current status of different pins (e.\+g. rotary clk and rotary data signals)
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item Dedicated read\+\_\+\+P\+I\+Nx\+\_\+logical\+\_\+level() functions return 0 if the pin is L\+OW (clear) and return 1 (doesn\textquotesingle{}t depends of the pin position) if the pin is H\+I\+GH
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & tested pin number from port D \\
+\hline
+\end{DoxyParams}

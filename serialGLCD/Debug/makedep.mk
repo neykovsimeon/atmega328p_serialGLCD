@@ -6,6 +6,8 @@ charMenu.c
 
 main.c
 
+ports_and_pins.c
+
 serialGLCD.c
 
 USART.c
