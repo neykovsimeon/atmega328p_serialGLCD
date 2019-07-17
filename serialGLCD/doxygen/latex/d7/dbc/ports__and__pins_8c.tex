@@ -2,25 +2,91 @@
 \label{ports__and__pins_8c}\index{ports\_and\_pins.c@{ports\_and\_pins.c}}
 {\ttfamily \#include \char`\"{}ports\+\_\+and\+\_\+pins.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-unsigned char \mbox{\hyperlink{ports__and__pins_8c_a3caea97f50440c0bbeb2c0460ec68666}{read\+\_\+\+P\+I\+N\+C\+\_\+logical\+\_\+level}} (unsigned char pin)
+unsigned char \mbox{\hyperlink{ports__and__pins_8c_ad373262e7cdfbfbe2b584a7f38acd7cb}{read\+\_\+\+P\+I\+Nx\+\_\+digital\+\_\+level}} (unsigned char pinport, unsigned char pin)
 \item 
-unsigned char \mbox{\hyperlink{ports__and__pins_8c_a96c82a530e7dee0a0ae91faaf12b2655}{read\+\_\+\+P\+I\+N\+D\+\_\+logical\+\_\+level}} (unsigned char pin)
+void \mbox{\hyperlink{ports__and__pins_8c_aa58c16af83646ae4540d072e3df1d9a9}{debounce\+Delay\+Init}} ()
 \item 
-unsigned char \mbox{\hyperlink{ports__and__pins_8c_a63c24abfcc367e135273c72bdded086a}{read\+\_\+\+P\+I\+N\+B\+\_\+logical\+\_\+level}} (unsigned char pin)
+unsigned char \mbox{\hyperlink{ports__and__pins_8c_a3ada00486d3599de70eaa71b5f994327}{check\+Button\+\_\+with\+Mode}} (unsigned char mode, unsigned char my\+Button\+\_\+pinport, unsigned char my\+Button, int button\+Delay)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ports__and__pins_8c_a88bfa0f3b81f3dea157839b0088fbfde}{button\+Pressed\+\_\+delay}} = 0
+\item 
+int \mbox{\hyperlink{ports__and__pins_8c_abd3fcaba7f125778dce5448749de8c91}{button\+Released\+\_\+delay}} = 0
+\item 
+unsigned char \mbox{\hyperlink{ports__and__pins_8c_a41096e814b31e499b584dc5cf83626aa}{button\+Pressed}} = 0
+\item 
+int \mbox{\hyperlink{ports__and__pins_8c_ac2d1b9fc041b9f3e905bd5e4c04a8b12}{mode\+Button\+\_\+pressed\+\_\+delay}} \mbox{[}\mbox{\hyperlink{main_8h_a3676696db2e140f6120977b175dab1ed}{max\+Button\+Num}}\mbox{]}
+\item 
+int \mbox{\hyperlink{ports__and__pins_8c_aca9287f772afafc2667ec5306d8a7fa2}{mode\+Button\+\_\+released\+\_\+delay}} \mbox{[}\mbox{\hyperlink{main_8h_a3676696db2e140f6120977b175dab1ed}{max\+Button\+Num}}\mbox{]}
+\item 
+unsigned char \mbox{\hyperlink{ports__and__pins_8c_aacb3c73227188c1feab17f564ceb0454}{mode\+Button\+\_\+pressed}} \mbox{[}\mbox{\hyperlink{main_8h_a3676696db2e140f6120977b175dab1ed}{max\+Button\+Num}}\mbox{]}
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{ports__and__pins_8c_a63c24abfcc367e135273c72bdded086a}\label{ports__and__pins_8c_a63c24abfcc367e135273c72bdded086a}} 
-\index{ports\_and\_pins.c@{ports\_and\_pins.c}!read\_PINB\_logical\_level@{read\_PINB\_logical\_level}}
-\index{read\_PINB\_logical\_level@{read\_PINB\_logical\_level}!ports\_and\_pins.c@{ports\_and\_pins.c}}
-\subsubsection{\texorpdfstring{read\_PINB\_logical\_level()}{read\_PINB\_logical\_level()}}
-{\footnotesize\ttfamily unsigned char read\+\_\+\+P\+I\+N\+B\+\_\+logical\+\_\+level (\begin{DoxyParamCaption}\item[{unsigned char}]{pin }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{ports__and__pins_8c_a3ada00486d3599de70eaa71b5f994327}\label{ports__and__pins_8c_a3ada00486d3599de70eaa71b5f994327}} 
+\index{ports\_and\_pins.c@{ports\_and\_pins.c}!checkButton\_withMode@{checkButton\_withMode}}
+\index{checkButton\_withMode@{checkButton\_withMode}!ports\_and\_pins.c@{ports\_and\_pins.c}}
+\subsubsection{\texorpdfstring{checkButton\_withMode()}{checkButton\_withMode()}}
+{\footnotesize\ttfamily unsigned char check\+Button\+\_\+with\+Mode (\begin{DoxyParamCaption}\item[{unsigned char}]{mode,  }\item[{unsigned char}]{my\+Button\+\_\+pinport,  }\item[{unsigned char}]{my\+Button,  }\item[{int}]{button\+Delay }\end{DoxyParamCaption})}
 
-\subsubsection*{Digital read the state of a specified pin number of port B}
+\subsubsection*{Push button function with a functional mode definition. Active L\+OW.}
+
+
+\begin{DoxyItemize}
+\item Feasible for buttons directly connected to an input pin (instead of a matrix, etc). Functional mode concept\+:
+\begin{DoxyItemize}
+\item on\+Click mode\+:
+\begin{DoxyItemize}
+\item action performed when pressed (active low);
+\item next action possible after release and press again (if hold pressed -\/$>$ action is performed once and waits for release);
+\item reasonable use case\+: button \char`\"{}enter\char`\"{}, switch on / off feature, etc
+\end{DoxyItemize}
+\item while\+Pressed mode\+:
+\begin{DoxyItemize}
+\item action performed when pressed (active low);
+\item next action comes in next cycle while button is being kept pressed (no release performed);
+\item reasonable use case\+: button \char`\"{}up\char`\"{}, \char`\"{}down\char`\"{}, \char`\"{}forward\char`\"{}, \char`\"{}backward\char`\"{}, \char`\"{}increment\char`\"{}, \char`\"{}decrement\char`\"{}, etc, like in a menu browse buttons "up / down\textquotesingle{}..
+\end{DoxyItemize}
+\item cycling is provided outside of the function (\textquotesingle{}main\textquotesingle{} while loop, timer interrupt at a time, etc)
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & Defines functional mode described above, on\+Click or while\+Pressed. Differs on a way whether next action comes only after button was released and pressed again \\
+\hline
+{\em my\+Button\+\_\+pinport} & This is M\+CU\textquotesingle{}s input pin port respectively (P\+I\+NB, P\+I\+NC, P\+I\+ND) -\/ suppose predefined with an application specific names \\
+\hline
+{\em my\+Button} & button number (indexed from 0). If buttons on the same port these might be directly the port\textquotesingle{}s pin(bit) number. \\
+\hline
+{\em button\+Delay} & Predefined debounce delay, would vary depends of the timing of the main loop cycle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ports__and__pins_8c_aa58c16af83646ae4540d072e3df1d9a9}\label{ports__and__pins_8c_aa58c16af83646ae4540d072e3df1d9a9}} 
+\index{ports\_and\_pins.c@{ports\_and\_pins.c}!debounceDelayInit@{debounceDelayInit}}
+\index{debounceDelayInit@{debounceDelayInit}!ports\_and\_pins.c@{ports\_and\_pins.c}}
+\subsubsection{\texorpdfstring{debounceDelayInit()}{debounceDelayInit()}}
+{\footnotesize\ttfamily void debounce\+Delay\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\subsubsection*{Push button delay containers initialization}
+
+
+\begin{DoxyItemize}
+\item Predefined debounce delay, would vary depends of the timing of the main loop cycle 
+\end{DoxyItemize}\mbox{\Hypertarget{ports__and__pins_8c_ad373262e7cdfbfbe2b584a7f38acd7cb}\label{ports__and__pins_8c_ad373262e7cdfbfbe2b584a7f38acd7cb}} 
+\index{ports\_and\_pins.c@{ports\_and\_pins.c}!read\_PINx\_digital\_level@{read\_PINx\_digital\_level}}
+\index{read\_PINx\_digital\_level@{read\_PINx\_digital\_level}!ports\_and\_pins.c@{ports\_and\_pins.c}}
+\subsubsection{\texorpdfstring{read\_PINx\_digital\_level()}{read\_PINx\_digital\_level()}}
+{\footnotesize\ttfamily unsigned char read\+\_\+\+P\+I\+Nx\+\_\+digital\+\_\+level (\begin{DoxyParamCaption}\item[{unsigned char}]{pinport,  }\item[{unsigned char}]{pin }\end{DoxyParamCaption})}
+
+\subsubsection*{Digital read the state of a specified pin number of a specified port}
 
 
 \begin{DoxyItemize}
@@ -42,68 +108,47 @@ unsigned char \mbox{\hyperlink{ports__and__pins_8c_a63c24abfcc367e135273c72bdded
 
 
 \begin{DoxyParams}{Parameters}
-{\em pin} & tested pin number from port B \\
+{\em pinport} & Identifies respective input pin port (P\+I\+NB, P\+I\+NC, P\+I\+ND), supposed predefined with an application specific names \\
+\hline
+{\em pin} & Tested input pin (bit) number from a specified port \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{ports__and__pins_8c_a3caea97f50440c0bbeb2c0460ec68666}\label{ports__and__pins_8c_a3caea97f50440c0bbeb2c0460ec68666}} 
-\index{ports\_and\_pins.c@{ports\_and\_pins.c}!read\_PINC\_logical\_level@{read\_PINC\_logical\_level}}
-\index{read\_PINC\_logical\_level@{read\_PINC\_logical\_level}!ports\_and\_pins.c@{ports\_and\_pins.c}}
-\subsubsection{\texorpdfstring{read\_PINC\_logical\_level()}{read\_PINC\_logical\_level()}}
-{\footnotesize\ttfamily unsigned char read\+\_\+\+P\+I\+N\+C\+\_\+logical\+\_\+level (\begin{DoxyParamCaption}\item[{unsigned char}]{pin }\end{DoxyParamCaption})}
-
-\subsubsection*{Digital read the state of a specified pin number of port C}
 
 
-\begin{DoxyItemize}
-\item Motivation
-\begin{DoxyItemize}
-\item R\+E\+AD macro (port \& (1$<$$<$pin)), where port is P\+I\+NC, P\+I\+ND or P\+I\+NB, would return\+:
-\begin{DoxyItemize}
-\item 0 if the pin is clear (L\+OW state)
-\item something $>$ 0 if the pin is set (H\+I\+GH state). The exact value would depends of the pin number (position)
-\end{DoxyItemize}
-\item In a particular use cases (e.\+g. rotary encoder handler) it is needed to check
-\begin{DoxyItemize}
-\item current versus previous state of a pin (e.\+g. rotary clk signal)
-\item current status of different pins (e.\+g. rotary clk and rotary data signals)
-\end{DoxyItemize}
-\end{DoxyItemize}
-\item Dedicated read\+\_\+\+P\+I\+Nx\+\_\+logical\+\_\+level() functions return 0 if the pin is L\+OW (clear) and return 1 (doesn\textquotesingle{}t depends of the pin position) if the pin is H\+I\+GH
-\end{DoxyItemize}
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{ports__and__pins_8c_a41096e814b31e499b584dc5cf83626aa}\label{ports__and__pins_8c_a41096e814b31e499b584dc5cf83626aa}} 
+\index{ports\_and\_pins.c@{ports\_and\_pins.c}!buttonPressed@{buttonPressed}}
+\index{buttonPressed@{buttonPressed}!ports\_and\_pins.c@{ports\_and\_pins.c}}
+\subsubsection{\texorpdfstring{buttonPressed}{buttonPressed}}
+{\footnotesize\ttfamily unsigned char button\+Pressed = 0}
 
+\mbox{\Hypertarget{ports__and__pins_8c_a88bfa0f3b81f3dea157839b0088fbfde}\label{ports__and__pins_8c_a88bfa0f3b81f3dea157839b0088fbfde}} 
+\index{ports\_and\_pins.c@{ports\_and\_pins.c}!buttonPressed\_delay@{buttonPressed\_delay}}
+\index{buttonPressed\_delay@{buttonPressed\_delay}!ports\_and\_pins.c@{ports\_and\_pins.c}}
+\subsubsection{\texorpdfstring{buttonPressed\_delay}{buttonPressed\_delay}}
+{\footnotesize\ttfamily int button\+Pressed\+\_\+delay = 0}
 
-\begin{DoxyParams}{Parameters}
-{\em pin} & tested pin number from port C \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{ports__and__pins_8c_a96c82a530e7dee0a0ae91faaf12b2655}\label{ports__and__pins_8c_a96c82a530e7dee0a0ae91faaf12b2655}} 
-\index{ports\_and\_pins.c@{ports\_and\_pins.c}!read\_PIND\_logical\_level@{read\_PIND\_logical\_level}}
-\index{read\_PIND\_logical\_level@{read\_PIND\_logical\_level}!ports\_and\_pins.c@{ports\_and\_pins.c}}
-\subsubsection{\texorpdfstring{read\_PIND\_logical\_level()}{read\_PIND\_logical\_level()}}
-{\footnotesize\ttfamily unsigned char read\+\_\+\+P\+I\+N\+D\+\_\+logical\+\_\+level (\begin{DoxyParamCaption}\item[{unsigned char}]{pin }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{ports__and__pins_8c_abd3fcaba7f125778dce5448749de8c91}\label{ports__and__pins_8c_abd3fcaba7f125778dce5448749de8c91}} 
+\index{ports\_and\_pins.c@{ports\_and\_pins.c}!buttonReleased\_delay@{buttonReleased\_delay}}
+\index{buttonReleased\_delay@{buttonReleased\_delay}!ports\_and\_pins.c@{ports\_and\_pins.c}}
+\subsubsection{\texorpdfstring{buttonReleased\_delay}{buttonReleased\_delay}}
+{\footnotesize\ttfamily int button\+Released\+\_\+delay = 0}
 
-\subsubsection*{Digital read the state of a specified pin number of port D}
+\mbox{\Hypertarget{ports__and__pins_8c_aacb3c73227188c1feab17f564ceb0454}\label{ports__and__pins_8c_aacb3c73227188c1feab17f564ceb0454}} 
+\index{ports\_and\_pins.c@{ports\_and\_pins.c}!modeButton\_pressed@{modeButton\_pressed}}
+\index{modeButton\_pressed@{modeButton\_pressed}!ports\_and\_pins.c@{ports\_and\_pins.c}}
+\subsubsection{\texorpdfstring{modeButton\_pressed}{modeButton\_pressed}}
+{\footnotesize\ttfamily unsigned char mode\+Button\+\_\+pressed\mbox{[}\mbox{\hyperlink{main_8h_a3676696db2e140f6120977b175dab1ed}{max\+Button\+Num}}\mbox{]}}
 
+\mbox{\Hypertarget{ports__and__pins_8c_ac2d1b9fc041b9f3e905bd5e4c04a8b12}\label{ports__and__pins_8c_ac2d1b9fc041b9f3e905bd5e4c04a8b12}} 
+\index{ports\_and\_pins.c@{ports\_and\_pins.c}!modeButton\_pressed\_delay@{modeButton\_pressed\_delay}}
+\index{modeButton\_pressed\_delay@{modeButton\_pressed\_delay}!ports\_and\_pins.c@{ports\_and\_pins.c}}
+\subsubsection{\texorpdfstring{modeButton\_pressed\_delay}{modeButton\_pressed\_delay}}
+{\footnotesize\ttfamily int mode\+Button\+\_\+pressed\+\_\+delay\mbox{[}\mbox{\hyperlink{main_8h_a3676696db2e140f6120977b175dab1ed}{max\+Button\+Num}}\mbox{]}}
 
-\begin{DoxyItemize}
-\item Motivation
-\begin{DoxyItemize}
-\item R\+E\+AD macro (port \& (1$<$$<$pin)), where port is P\+I\+NC, P\+I\+ND or P\+I\+NB, would return\+:
-\begin{DoxyItemize}
-\item 0 if the pin is clear (L\+OW state)
-\item something $>$ 0 if the pin is set (H\+I\+GH state). The exact value would depends of the pin number (position)
-\end{DoxyItemize}
-\item In a particular use cases (e.\+g. rotary encoder handler) it is needed to check
-\begin{DoxyItemize}
-\item current versus previous state of a pin (e.\+g. rotary clk signal)
-\item current status of different pins (e.\+g. rotary clk and rotary data signals)
-\end{DoxyItemize}
-\end{DoxyItemize}
-\item Dedicated read\+\_\+\+P\+I\+Nx\+\_\+logical\+\_\+level() functions return 0 if the pin is L\+OW (clear) and return 1 (doesn\textquotesingle{}t depends of the pin position) if the pin is H\+I\+GH
-\end{DoxyItemize}
+\mbox{\Hypertarget{ports__and__pins_8c_aca9287f772afafc2667ec5306d8a7fa2}\label{ports__and__pins_8c_aca9287f772afafc2667ec5306d8a7fa2}} 
+\index{ports\_and\_pins.c@{ports\_and\_pins.c}!modeButton\_released\_delay@{modeButton\_released\_delay}}
+\index{modeButton\_released\_delay@{modeButton\_released\_delay}!ports\_and\_pins.c@{ports\_and\_pins.c}}
+\subsubsection{\texorpdfstring{modeButton\_released\_delay}{modeButton\_released\_delay}}
+{\footnotesize\ttfamily int mode\+Button\+\_\+released\+\_\+delay\mbox{[}\mbox{\hyperlink{main_8h_a3676696db2e140f6120977b175dab1ed}{max\+Button\+Num}}\mbox{]}}
 
-
-\begin{DoxyParams}{Parameters}
-{\em pin} & tested pin number from port D \\
-\hline
-\end{DoxyParams}

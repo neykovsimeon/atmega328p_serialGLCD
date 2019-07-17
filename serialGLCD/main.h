@@ -39,23 +39,47 @@
 
 /*@{*/
 // LED pins and registers mapping	
-#define dirLEDs_PORT			DDRC			///< Application specific names defined for MCU's ports and pins
-#define LEDs_PORT				PORTC			///< Application specific names defined for MCU's ports and pins
-#define LED_RED					5				///< Application specific names defined for MCU's ports and pins
+#define myLed_dirPort			DDRC			///< Application specific names defined for MCU's ports and pins
+#define myLed_dataPort			PORTC			///< Application specific names defined for MCU's ports and pins
+#define myLed					5				///< Application specific names defined for MCU's ports and pins
 
 // push buttons MCU's pins and registers mapping
-#define dirPUSHBUTTON_PORT		DDRC			///< Application specific names defined for MCU's ports and pins
-#define PUSHBUTTON_PORT			PORTC			///< Application specific names defined for MCU's ports and pins
-#define readPUSHBUTTON			PINC			///< Application specific names defined for MCU's ports and pins
-#define BUTTON_enter			4				///< Application specific names defined for MCU's ports and pins
-#define BUTTON_down				3				///< Application specific names defined for MCU's ports and pins
-#define BUTTON_up				2				///< Application specific names defined for MCU's ports and pins
+#define buttonEnter_dirPort		DDRC			///< Application specific names defined for MCU's ports and pins
+#define buttonDown_dirPort		DDRC			///< Application specific names defined for MCU's ports and pins
+#define buttonUp_dirPort		DDRC			///< Application specific names defined for MCU's ports and pins
+
+#define buttonEnter_dataPort	PORTC			///< Application specific names defined for MCU's ports and pins
+#define buttonDown_dataPort		PORTC			///< Application specific names defined for MCU's ports and pins
+#define buttonUp_dataPort		PORTC			///< Application specific names defined for MCU's ports and pins
+
+#define buttonEnter_pinPort		PINC			///< Application specific names defined for MCU's ports and pins
+#define buttonDown_pinPort		PINC			///< Application specific names defined for MCU's ports and pins
+#define buttonUp_pinPort		PINC			///< Application specific names defined for MCU's ports and pins
+
+#define buttonEnter				4				///< Application specific names defined for MCU's ports and pins
+#define buttonDown				3				///< Application specific names defined for MCU's ports and pins
+#define buttonUp				2				///< Application specific names defined for MCU's ports and pins
+
+#define maxButtonNum			8				///< in a concept of a button directly connect to a port, there might be max of 8 buttons on one port
 
 // rotary encoder MCU's pins mapping
 // note use the same MCU port C, thus use the same registers mapping as for push buttons
-#define ROTARY_DA				1				///< Application specific names defined for MCU's ports and pins
-#define ROTARY_CK				0				///< Application specific names defined for MCU's ports and pins
-#define ROTARY_SW				4				///< Application specific names defined for MCU's ports and pins
+#define rotaryData_dirPort		DDRC			///< Application specific names defined for MCU's ports and pins
+#define rotatyCLK_dirPort		DDRC			///< Application specific names defined for MCU's ports and pins
+#define rotaryButton_dirPort	DDRC			///< Application specific names defined for MCU's ports and pins
+
+#define rotaryData_dataPort		PORTC			///< Application specific names defined for MCU's ports and pins
+#define rotaryCLK_dataPort		PORTC			///< Application specific names defined for MCU's ports and pins
+#define rotaryButton_dataPort	PORTC			///< Application specific names defined for MCU's ports and pins
+
+#define rotaryData				1				///< Application specific names defined for MCU's ports and pins
+#define rotatyCLK				0				///< Application specific names defined for MCU's ports and pins
+#define rotaryButton			4				///< Application specific names defined for MCU's ports and pins
+
+#define rotaryData_pinPort		PINC			///< Application specific names defined for MCU's ports and pins
+#define rotatyCLK_pinPort		PINC			///< Application specific names defined for MCU's ports and pins
+#define rotaryButton_pinPort	PINC			///< Application specific names defined for MCU's ports and pins
+
 /*@}*/
 
 extern void start (void);

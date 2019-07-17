@@ -17,5 +17,8 @@ var searchData=
   ['menu_5f014',['menu_014',['../da/d11/char_menu_8c.html#a40e5b3ca6c0ff44725f263fd48b7b3d9',1,'charMenu.c']]],
   ['menu_5f015',['menu_015',['../da/d11/char_menu_8c.html#afd8983259c42e4f428481593320dffba',1,'charMenu.c']]],
   ['menu_5f016',['menu_016',['../da/d11/char_menu_8c.html#a49732f542265f34400cf800a60889fee',1,'charMenu.c']]],
+  ['modebutton_5fpressed',['modeButton_pressed',['../d7/dbc/ports__and__pins_8c.html#aacb3c73227188c1feab17f564ceb0454',1,'ports_and_pins.c']]],
+  ['modebutton_5fpressed_5fdelay',['modeButton_pressed_delay',['../d7/dbc/ports__and__pins_8c.html#ac2d1b9fc041b9f3e905bd5e4c04a8b12',1,'ports_and_pins.c']]],
+  ['modebutton_5freleased_5fdelay',['modeButton_released_delay',['../d7/dbc/ports__and__pins_8c.html#aca9287f772afafc2667ec5306d8a7fa2',1,'ports_and_pins.c']]],
   ['my_5fmenu',['my_menu',['../da/d11/char_menu_8c.html#adb967101fc7f610424156c31fc5d09dd',1,'my_menu():&#160;charMenu.c'],['../d6/dd9/char_menu_8h.html#adb967101fc7f610424156c31fc5d09dd',1,'my_menu():&#160;charMenu.c']]]
 ];
