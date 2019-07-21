@@ -58,7 +58,7 @@ PROJECT_LOGO           =
 # entered, it will be relative to the location where doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       ="D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\doxygen"
+OUTPUT_DIRECTORY       ="C:\Users\monka\Desktop\Projects\avr\atmega328p_serialGLCD\atmega328p_serialGLCD\serialGLCD\doxygen"
 
 # If the CREATE_SUBDIRS tag is set to YES then doxygen will create 4096 sub-
 # directories (in 2 levels) under the output directory of each output format and
@@ -813,7 +813,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                 ="D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\charMenu.c" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\charMenu.h" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\main.c" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\main.h" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\ports_and_pins.c" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\ports_and_pins.h" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\serialGLCD.c" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\serialGLCD.h" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\USART.c" "D:\Projects\serialGLCD128x64_avr\serialGLCD\serialGLCD\USART.h" 
+INPUT                 ="C:\Users\monka\Desktop\Projects\avr\atmega328p_serialGLCD\atmega328p_serialGLCD\serialGLCD\charMenu.c" "C:\Users\monka\Desktop\Projects\avr\atmega328p_serialGLCD\atmega328p_serialGLCD\serialGLCD\charMenu.h" "C:\Users\monka\Desktop\Projects\avr\atmega328p_serialGLCD\atmega328p_serialGLCD\serialGLCD\main.c" "C:\Users\monka\Desktop\Projects\avr\atmega328p_serialGLCD\atmega328p_serialGLCD\serialGLCD\main.h" "C:\Users\monka\Desktop\Projects\avr\atmega328p_serialGLCD\atmega328p_serialGLCD\serialGLCD\ports_and_pins.c" "C:\Users\monka\Desktop\Projects\avr\atmega328p_serialGLCD\atmega328p_serialGLCD\serialGLCD\ports_and_pins.h" "C:\Users\monka\Desktop\Projects\avr\atmega328p_serialGLCD\atmega328p_serialGLCD\serialGLCD\serialGLCD.c" "C:\Users\monka\Desktop\Projects\avr\atmega328p_serialGLCD\atmega328p_serialGLCD\serialGLCD\serialGLCD.h" "C:\Users\monka\Desktop\Projects\avr\atmega328p_serialGLCD\atmega328p_serialGLCD\serialGLCD\USART.c" "C:\Users\monka\Desktop\Projects\avr\atmega328p_serialGLCD\atmega328p_serialGLCD\serialGLCD\USART.h" 
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
